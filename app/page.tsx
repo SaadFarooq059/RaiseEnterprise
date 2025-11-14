@@ -3,10 +3,15 @@
 import Navbar from "@/components/navbar"
 import ReportCard from "@/components/report-card"
 import HeroSection from "@/components/hero-section"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Home() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
 
   const cards = [
     {
@@ -100,107 +105,121 @@ export default function Home() {
 
       {/* Report Overview Title */}
       <div className="px-4 pt-40 pb-12">
-        <h1 className="ml-24 font-serif text-4xl capitalize text-white lg:ml-[370px]">report Overview</h1>
+        <h1 className={`ml-24 font-serif text-4xl capitalize text-white lg:ml-[370px] transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          report Overview
+        </h1>
       </div>
 
       <div className="mx-auto max-w-[1200px] px-4 pb-20 lg:pl-20">
         <div className="flex flex-col lg:flex-row gap-x-8">
           {/* Left Column - Cards 00, 02, 04 */}
           <div className="flex flex-col gap-y-8 lg:w-1/2">
-            <ReportCard
-              number={cards[0].number}
-              title={cards[0].title}
-              heading={cards[0].heading}
-              subtext={cards[0].subtext}
-              imageSrc={cards[0].imageSrc}
-              defaultBg={cards[0].defaultBg}
-              hoverBg={cards[0].hoverBg}
-              defaultTextColor={cards[0].defaultTextColor}
-              hoverTextColor={cards[0].hoverTextColor}
-              isHovered={hoveredCard === 0}
-              onMouseEnter={() => setHoveredCard(0)}
-              onMouseLeave={() => setHoveredCard(null)}
-              className=""
-            />
-            <ReportCard
-              number={cards[2].number}
-              title={cards[2].title}
-              heading={cards[2].heading}
-              subtext={cards[2].subtext}
-              imageSrc={cards[2].imageSrc}
-              defaultBg={cards[2].defaultBg}
-              hoverBg={cards[2].hoverBg}
-              defaultTextColor={cards[2].defaultTextColor}
-              hoverTextColor={cards[2].hoverTextColor}
-              isHovered={hoveredCard === 2}
-              onMouseEnter={() => setHoveredCard(2)}
-              onMouseLeave={() => setHoveredCard(null)}
-              className=""
-            />
-            <ReportCard
-              number={cards[4].number}
-              title={cards[4].title}
-              heading={cards[4].heading}
-              subtext={cards[4].subtext}
-              imageSrc={cards[4].imageSrc}
-              defaultBg={cards[4].defaultBg}
-              hoverBg={cards[4].hoverBg}
-              defaultTextColor={cards[4].defaultTextColor}
-              hoverTextColor={cards[4].hoverTextColor}
-              isHovered={hoveredCard === 4}
-              onMouseEnter={() => setHoveredCard(4)}
-              onMouseLeave={() => setHoveredCard(null)}
-              className=""
-            />
+            <div className={`transition-all duration-1000 delay-[900ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <ReportCard
+                number={cards[0].number}
+                title={cards[0].title}
+                heading={cards[0].heading}
+                subtext={cards[0].subtext}
+                imageSrc={cards[0].imageSrc}
+                defaultBg={cards[0].defaultBg}
+                hoverBg={cards[0].hoverBg}
+                defaultTextColor={cards[0].defaultTextColor}
+                hoverTextColor={cards[0].hoverTextColor}
+                isHovered={hoveredCard === 0}
+                onMouseEnter={() => setHoveredCard(0)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className=""
+              />
+            </div>
+            <div className={`transition-all duration-1000 delay-[1100ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <ReportCard
+                number={cards[2].number}
+                title={cards[2].title}
+                heading={cards[2].heading}
+                subtext={cards[2].subtext}
+                imageSrc={cards[2].imageSrc}
+                defaultBg={cards[2].defaultBg}
+                hoverBg={cards[2].hoverBg}
+                defaultTextColor={cards[2].defaultTextColor}
+                hoverTextColor={cards[2].hoverTextColor}
+                isHovered={hoveredCard === 2}
+                onMouseEnter={() => setHoveredCard(2)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className=""
+              />
+            </div>
+            <div className={`transition-all duration-1000 delay-[1300ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <ReportCard
+                number={cards[4].number}
+                title={cards[4].title}
+                heading={cards[4].heading}
+                subtext={cards[4].subtext}
+                imageSrc={cards[4].imageSrc}
+                defaultBg={cards[4].defaultBg}
+                hoverBg={cards[4].hoverBg}
+                defaultTextColor={cards[4].defaultTextColor}
+                hoverTextColor={cards[4].hoverTextColor}
+                isHovered={hoveredCard === 4}
+                onMouseEnter={() => setHoveredCard(4)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className=""
+              />
+            </div>
           </div>
 
           {/* Right Column - Cards 01, 03, 05 */}
           <div className="flex flex-col gap-y-8 lg:w-1/2 lg:pt-32">
-            <ReportCard
-              number={cards[1].number}
-              title={cards[1].title}
-              heading={cards[1].heading}
-              subtext={cards[1].subtext}
-              imageSrc={cards[1].imageSrc}
-              defaultBg={cards[1].defaultBg}
-              hoverBg={cards[1].hoverBg}
-              defaultTextColor={cards[1].defaultTextColor}
-              hoverTextColor={cards[1].hoverTextColor}
-              isHovered={hoveredCard === 1}
-              onMouseEnter={() => setHoveredCard(1)}
-              onMouseLeave={() => setHoveredCard(null)}
-              className=""
-            />
-            <ReportCard
-              number={cards[3].number}
-              title={cards[3].title}
-              heading={cards[3].heading}
-              subtext={cards[3].subtext}
-              imageSrc={cards[3].imageSrc}
-              defaultBg={cards[3].defaultBg}
-              hoverBg={cards[3].hoverBg}
-              defaultTextColor={cards[3].defaultTextColor}
-              hoverTextColor={cards[3].hoverTextColor}
-              isHovered={hoveredCard === 3}
-              onMouseEnter={() => setHoveredCard(3)}
-              onMouseLeave={() => setHoveredCard(null)}
-              className=""
-            />
-            <ReportCard
-              number={cards[5].number}
-              title={cards[5].title}
-              heading={cards[5].heading}
-              subtext={cards[5].subtext}
-              imageSrc={cards[5].imageSrc}
-              defaultBg={cards[5].defaultBg}
-              hoverBg={cards[5].hoverBg}
-              defaultTextColor={cards[5].defaultTextColor}
-              hoverTextColor={cards[5].hoverTextColor}
-              isHovered={hoveredCard === 5}
-              onMouseEnter={() => setHoveredCard(5)}
-              onMouseLeave={() => setHoveredCard(null)}
-              className=""
-            />
+            <div className={`transition-all duration-1000 delay-[1000ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <ReportCard
+                number={cards[1].number}
+                title={cards[1].title}
+                heading={cards[1].heading}
+                subtext={cards[1].subtext}
+                imageSrc={cards[1].imageSrc}
+                defaultBg={cards[1].defaultBg}
+                hoverBg={cards[1].hoverBg}
+                defaultTextColor={cards[1].defaultTextColor}
+                hoverTextColor={cards[1].hoverTextColor}
+                isHovered={hoveredCard === 1}
+                onMouseEnter={() => setHoveredCard(1)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className=""
+              />
+            </div>
+            <div className={`transition-all duration-1000 delay-[1200ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <ReportCard
+                number={cards[3].number}
+                title={cards[3].title}
+                heading={cards[3].heading}
+                subtext={cards[3].subtext}
+                imageSrc={cards[3].imageSrc}
+                defaultBg={cards[3].defaultBg}
+                hoverBg={cards[3].hoverBg}
+                defaultTextColor={cards[3].defaultTextColor}
+                hoverTextColor={cards[3].hoverTextColor}
+                isHovered={hoveredCard === 3}
+                onMouseEnter={() => setHoveredCard(3)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className=""
+              />
+            </div>
+            <div className={`transition-all duration-1000 delay-[1400ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <ReportCard
+                number={cards[5].number}
+                title={cards[5].title}
+                heading={cards[5].heading}
+                subtext={cards[5].subtext}
+                imageSrc={cards[5].imageSrc}
+                defaultBg={cards[5].defaultBg}
+                hoverBg={cards[5].hoverBg}
+                defaultTextColor={cards[5].defaultTextColor}
+                hoverTextColor={cards[5].hoverTextColor}
+                isHovered={hoveredCard === 5}
+                onMouseEnter={() => setHoveredCard(5)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className=""
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,10 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function Navbar() {
   const [activeItem, setActiveItem] = useState("Top")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
 
   const navItems = [
     { name: "Top", link: "#top" },
@@ -22,7 +27,7 @@ export default function Navbar() {
     <>
       {/* Desktop Navbar - Hidden on mobile */}
       <nav
-        className="fixed top-6 z-40 hidden lg:flex items-center justify-center w-full"
+        className={`fixed top-6 z-40 hidden lg:flex items-center justify-center w-full transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
         style={{ backgroundColor: "transparent" }}
       >
         {/* Logo - Left side */}
@@ -83,7 +88,7 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Navbar - Shown only on mobile */}
-      <nav className="fixed top-0 left-0 right-0 z-40 lg:hidden">
+      <nav className={`fixed top-0 left-0 right-0 z-40 lg:hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
         <div className="flex items-center justify-between px-6 py-4">
           {/* Hamburger Menu Button - Left */}
           <button
