@@ -1,103 +1,205 @@
-import Image from "next/image";
+"use client"
+
+import Navbar from "@/components/navbar"
+import ReportCard from "@/components/report-card"
+import { useState } from "react"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  const cards = [
+    {
+      number: "00",
+      title: "CEO NOTE",
+      heading: "A Message\nfrom our CEO",
+      subtext: "Mr. Alfie Othman",
+      imageSrc: "/home/ceo.png",
+      imageHeight: "h-[317px]",
+      defaultBg: "#9B2683",
+      hoverBg: "#FCD290",
+      defaultTextColor: "#FCD290",
+      hoverTextColor: "#9B2683",
+      className: "",
+    },
+    {
+      number: "01",
+      title: "SOCIAL ENTERPRISE LANDSCAPE",
+      heading: "Redefining the\nFuture of Social\nEnterprise",
+      imageSrc: "/home/2.png",
+      imageHeight: "h-[331px]",
+      defaultBg: "#9B2683",
+      hoverBg: "#FFFFFF",
+      defaultTextColor: "#FFFFFF",
+      hoverTextColor: "#9B2683",
+      className: "lg:mt-8",
+    },
+    {
+      number: "02",
+      title: "VENTURE BUILDING",
+      heading: "Building\nBusinesses with\nImpact",
+      imageSrc: "/home/3.png",
+      imageHeight: "h-[345px]",
+      defaultBg: "#FFFFFF",
+      hoverBg: "#9B2683",
+      defaultTextColor: "#9B2683",
+      hoverTextColor: "#FFFFFF",
+      className: "",
+    },
+    {
+      number: "03",
+      title: "CAPABILITY DEVELOPMENT",
+      heading: "Upskilling\nPeople &\nEnterprise",
+      imageSrc: "/home/4.png",
+      imageHeight: "h-[335px]",
+      defaultBg: "#FFFFFF",
+      hoverBg: "#A564F7",
+      defaultTextColor: "#A564F7",
+      hoverTextColor: "#FFFFFF",
+      className: "lg:mt-8",
+    },
+    {
+      number: "04",
+      title: "EVENTS & FEATURES",
+      heading: "From Trailblazers\nto Community\nBuilders",
+      imageSrc: "/home/5.png",
+      imageHeight: "h-[337px]",
+      defaultBg: "#FFFFFF",
+      hoverBg: "#7479ED",
+      defaultTextColor: "#7479ED",
+      hoverTextColor: "#FFFFFF",
+      className: "",
+    },
+    {
+      number: "05",
+      title: "PODCAST - COMING SOON",
+      heading: "Featuring the\nLeaders of Social\nImpact",
+      imageSrc: "/home/6.png",
+      imageHeight: "h-[278px]",
+      defaultBg: "#FFFFFF",
+      hoverBg: "#2A167F",
+      defaultTextColor: "#2A167F",
+      hoverTextColor: "#FFFFFF",
+      className: "lg:mt-8",
+    },
+  ]
+
+  return (
+    <main
+      className="min-h-screen"
+      style={{ background: "linear-gradient(180deg, #4A2281 0%, #681968 12%, #7A56C4 100%)" }}
+    >
+      {/* Logo - Separate from navbar, on the left */}
+      <div className="fixed left-8 top-6 z-50"></div>
+
+      {/* Navbar - Simple and accessible */}
+      <Navbar />
+
+      {/* Report Overview Title */}
+      <div className="px-4 pt-40 pb-12">
+        <h1 className="ml-24 font-serif text-4xl capitalize text-white lg:ml-[370px]">report Overview</h1>
+      </div>
+
+      <div className="mx-auto max-w-[1200px] px-4 pb-20 lg:pl-20">
+        <div className="flex flex-col lg:flex-row gap-x-8">
+          {/* Left Column - Cards 00, 02, 04 */}
+          <div className="flex flex-col gap-y-8 lg:w-1/2">
+            <ReportCard
+              number={cards[0].number}
+              title={cards[0].title}
+              heading={cards[0].heading}
+              subtext={cards[0].subtext}
+              imageSrc={cards[0].imageSrc}
+              defaultBg={cards[0].defaultBg}
+              hoverBg={cards[0].hoverBg}
+              defaultTextColor={cards[0].defaultTextColor}
+              hoverTextColor={cards[0].hoverTextColor}
+              isHovered={hoveredCard === 0}
+              onMouseEnter={() => setHoveredCard(0)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className=""
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <ReportCard
+              number={cards[2].number}
+              title={cards[2].title}
+              heading={cards[2].heading}
+              subtext={cards[2].subtext}
+              imageSrc={cards[2].imageSrc}
+              defaultBg={cards[2].defaultBg}
+              hoverBg={cards[2].hoverBg}
+              defaultTextColor={cards[2].defaultTextColor}
+              hoverTextColor={cards[2].hoverTextColor}
+              isHovered={hoveredCard === 2}
+              onMouseEnter={() => setHoveredCard(2)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className=""
+            />
+            <ReportCard
+              number={cards[4].number}
+              title={cards[4].title}
+              heading={cards[4].heading}
+              subtext={cards[4].subtext}
+              imageSrc={cards[4].imageSrc}
+              defaultBg={cards[4].defaultBg}
+              hoverBg={cards[4].hoverBg}
+              defaultTextColor={cards[4].defaultTextColor}
+              hoverTextColor={cards[4].hoverTextColor}
+              isHovered={hoveredCard === 4}
+              onMouseEnter={() => setHoveredCard(4)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className=""
+            />
+          </div>
+
+          {/* Right Column - Cards 01, 03, 05 */}
+          <div className="flex flex-col gap-y-8 lg:w-1/2 lg:pt-32">
+            <ReportCard
+              number={cards[1].number}
+              title={cards[1].title}
+              heading={cards[1].heading}
+              subtext={cards[1].subtext}
+              imageSrc={cards[1].imageSrc}
+              defaultBg={cards[1].defaultBg}
+              hoverBg={cards[1].hoverBg}
+              defaultTextColor={cards[1].defaultTextColor}
+              hoverTextColor={cards[1].hoverTextColor}
+              isHovered={hoveredCard === 1}
+              onMouseEnter={() => setHoveredCard(1)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className=""
+            />
+            <ReportCard
+              number={cards[3].number}
+              title={cards[3].title}
+              heading={cards[3].heading}
+              subtext={cards[3].subtext}
+              imageSrc={cards[3].imageSrc}
+              defaultBg={cards[3].defaultBg}
+              hoverBg={cards[3].hoverBg}
+              defaultTextColor={cards[3].defaultTextColor}
+              hoverTextColor={cards[3].hoverTextColor}
+              isHovered={hoveredCard === 3}
+              onMouseEnter={() => setHoveredCard(3)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className=""
+            />
+            <ReportCard
+              number={cards[5].number}
+              title={cards[5].title}
+              heading={cards[5].heading}
+              subtext={cards[5].subtext}
+              imageSrc={cards[5].imageSrc}
+              defaultBg={cards[5].defaultBg}
+              hoverBg={cards[5].hoverBg}
+              defaultTextColor={cards[5].defaultTextColor}
+              hoverTextColor={cards[5].hoverTextColor}
+              isHovered={hoveredCard === 5}
+              onMouseEnter={() => setHoveredCard(5)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className=""
+            />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+    </main>
+  )
 }
