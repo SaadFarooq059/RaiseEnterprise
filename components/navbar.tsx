@@ -22,20 +22,19 @@ export default function Navbar() {
     <>
       {/* Desktop Navbar - Hidden on mobile */}
       <nav
-        className="fixed top-6 z-40 hidden lg:flex items-center w-full px-8"
+        className="fixed top-6 z-40 hidden lg:flex items-center justify-center w-full"
         style={{ backgroundColor: "transparent" }}
       >
         {/* Logo - Left side */}
-        <div className="mr-4">
+        <div className="absolute left-70">
           <img src="/logo.png" alt="raiSE Logo" className="h-12 w-auto" />
         </div>
 
         {/* Navbar Items - Center */}
-        <div className="flex-1 flex items-center justify-center">
-          <div
-            className="flex items-center gap-4 rounded-full px-6 py-1 max-w-[1071px]"
-            style={{ backgroundColor: "#A374FFB2" }}
-          >
+        <div
+          className="flex items-center gap-4 rounded-full px-6 py-1 max-w-[1071px]"
+          style={{ backgroundColor: "#A374FFB2" }}
+        >
           {navItems.map((item, idx) => {
             const words = item.name.split(" ")
             const isSelected = activeItem === item.name
@@ -64,6 +63,12 @@ export default function Navbar() {
                     <br />
                     {words[1]}
                   </>
+                ) : words.length === 3 ? (
+                  <>
+                    {words[0]} {words[1]}
+                    <br />
+                    {words[2]}
+                  </>
                 ) : (
                   <>
                     {words[0]}
@@ -74,7 +79,6 @@ export default function Navbar() {
               </a>
             )
           })}
-        </div>
         </div>
       </nav>
 
