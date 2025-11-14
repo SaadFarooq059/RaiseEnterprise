@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/navbar"
 import ReportCard from "@/components/report-card"
+import HeroSection from "@/components/hero-section"
 import { useState } from "react"
 
 export default function Home() {
@@ -93,6 +94,9 @@ export default function Home() {
 
       {/* Navbar - Simple and accessible */}
       <Navbar />
+
+      {/* Hero Section */}
+      <HeroSection />
 
       {/* Report Overview Title */}
       <div className="px-4 pt-40 pb-12">
