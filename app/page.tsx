@@ -104,14 +104,38 @@ export default function Home() {
       <HeroSection />
 
       {/* Report Overview Title */}
-      <div className="px-4 pt-40 pb-12">
-        <h1 className={`ml-24 font-serif text-4xl capitalize text-white lg:ml-[370px] transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className="px-4 pt-8 lg:pt-40 pb-6 lg:pb-12">
+        <h1 className={`ml-4 lg:ml-[370px] font-serif text-3xl lg:text-4xl capitalize text-white transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           report Overview
         </h1>
       </div>
 
       <div className="mx-auto max-w-[1200px] px-4 pb-20 lg:pl-20">
-        <div className="flex flex-col lg:flex-row gap-x-8">
+        {/* Mobile: All cards in order */}
+        <div className="flex flex-col gap-y-6 lg:hidden">
+          {cards.map((card, index) => (
+            <div key={index} className={`transition-all duration-1000 delay-[${900 + index * 100}ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <ReportCard
+                number={card.number}
+                title={card.title}
+                heading={card.heading}
+                subtext={card.subtext}
+                imageSrc={card.imageSrc}
+                defaultBg={card.defaultBg}
+                hoverBg={card.hoverBg}
+                defaultTextColor={card.defaultTextColor}
+                hoverTextColor={card.hoverTextColor}
+                isHovered={hoveredCard === index}
+                onMouseEnter={() => setHoveredCard(index)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className=""
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: Two column layout */}
+        <div className="hidden lg:flex flex-col lg:flex-row gap-x-8">
           {/* Left Column - Cards 00, 02, 04 */}
           <div className="flex flex-col gap-y-8 lg:w-1/2">
             <div className={`transition-all duration-1000 delay-[900ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

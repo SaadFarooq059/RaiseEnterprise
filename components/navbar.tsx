@@ -30,9 +30,9 @@ export default function Navbar() {
         className={`fixed top-6 z-40 hidden lg:flex items-center justify-center w-full transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
         style={{ backgroundColor: "transparent" }}
       >
-        {/* Logo - Left side */}
-        <div className="absolute left-70">
-          <img src="/logo.png" alt="raiSE Logo" className="h-12 w-auto" />
+        {/* Logo - Left side - using calc to position relative to navbar */}
+        <div className="absolute" style={{ left: 'calc(50% - 600px)' }}>
+          <img src="/logo.png" alt="raiSE Logo" className="h-10 w-auto" />
         </div>
 
         {/* Navbar Items - Center */}
@@ -114,7 +114,7 @@ export default function Navbar() {
           </button>
 
           {/* Logo - Right */}
-          <div className="text-white font-bold text-xl">raiSE</div>
+          <img src="/logo.png" alt="raiSE Logo" className="h-8 w-auto" />
         </div>
 
         {/* Mobile Menu Dropdown */}

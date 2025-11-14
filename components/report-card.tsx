@@ -33,34 +33,36 @@ export default function ReportCard({
 }: ReportCardProps) {
   return (
     <div
-      className={`relative w-full h-[650px] rounded-[33px] p-6 shadow-[0px_5px_15px_rgba(0,0,0,0.17)] transition-all duration-300 hover:shadow-2xl flex flex-col ${className}`}
+      className={`relative w-full h-auto min-h-[450px] lg:h-[650px] rounded-[20px] lg:rounded-[33px] p-4 lg:p-6 shadow-[0px_5px_15px_rgba(0,0,0,0.17)] transition-all duration-300 hover:shadow-2xl flex flex-col ${className}`}
       style={{ background: isHovered ? hoverBg : defaultBg }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="mb-4 flex items-start justify-between">
+      <div className="mb-3 lg:mb-4 flex items-start justify-between">
         <h3
-          className="font-sans text-lg font-semibold uppercase transition-colors duration-300"
+          className="font-sans text-sm lg:text-lg font-semibold uppercase transition-colors duration-300"
           style={{ color: isHovered ? hoverTextColor : defaultTextColor }}
         >
           {title}
         </h3>
         <span
-          className="font-sans text-2xl font-extrabold transition-colors duration-300"
+          className="font-sans text-lg lg:text-2xl font-extrabold transition-colors duration-300"
           style={{ color: isHovered ? hoverTextColor : defaultTextColor }}
         >
           {number}
         </span>
       </div>
 
-      <img
-        src={imageSrc}
-        alt={title}
-        className="mb-6 w-full h-[320px] rounded-[33px] object-cover"
-      />
+      <div className="mb-4 lg:mb-6 w-full h-[200px] lg:h-[320px] rounded-[15px] lg:rounded-[33px] overflow-hidden">
+        <img
+          src={imageSrc}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
       <h2
-        className="mb-4 font-serif text-[40px] font-medium capitalize leading-10 transition-colors duration-300 whitespace-pre-line"
+        className="mb-3 lg:mb-4 font-serif text-[24px] lg:text-[40px] font-medium capitalize leading-7 lg:leading-10 transition-colors duration-300 whitespace-pre-line"
         style={{ color: isHovered ? hoverTextColor : defaultTextColor }}
       >
         {heading}
@@ -68,14 +70,14 @@ export default function ReportCard({
 
       {subtext && (
         <p
-          className="font-sans text-[27px] font-medium capitalize leading-[27px] transition-colors duration-300"
+          className="font-sans text-[18px] lg:text-[27px] font-medium capitalize leading-[20px] lg:leading-[27px] transition-colors duration-300"
           style={{ color: isHovered ? hoverTextColor : defaultTextColor }}
         >
           {subtext}
         </p>
       )}
 
-      <div className="absolute bottom-6 right-6">
+      <div className="absolute bottom-4 lg:bottom-6 right-4 lg:right-6">
         {isHovered ? (
           <svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
