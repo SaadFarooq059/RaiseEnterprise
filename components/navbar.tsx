@@ -12,15 +12,15 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Top", link: "#top" },
+    { name: "Top", link: "/" },
     { name: "Report Overview", link: "#report" },
-    { name: "CEO Note", link: "#ceo" },
+    { name: "CEO Note", link: "ceo-note" },
     { name: "Redefining Social Enterprise", link: "#social" },
     { name: "Venture Building", link: "#venture" },
-    { name: "Capability Development", link: "#capability" },
+    { name: "Capability Development", link: "capability-development" },
     { name: "Showcasing Trailblazers", link: "#showcasing" },
-    { name: "raiSE Podcast", link: "#podcast" },
-    { name: "Financial Highlights", link: "#financial" },
+    { name: "raiSE Podcast", link: "raise-podcast" },
+    { name: "Financial Highlights", link: "financial-highlights" },
   ]
 
   return (
