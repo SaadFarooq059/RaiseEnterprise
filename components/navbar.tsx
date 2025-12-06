@@ -16,7 +16,7 @@ export default function Navbar() {
     { name: "Report Overview", link: "#report" },
     { name: "CEO Note", link: "ceo-note" },
     { name: "Redefining Social Enterprise", link: "#social" },
-    { name: "Venture Building", link: "#venture" },
+    { name: "Venture Building", link: "venture-building" },
     { name: "Capability Development", link: "capability-development" },
     { name: "Showcasing Trailblazers", link: "#showcasing" },
     { name: "raiSE Podcast", link: "raise-podcast" },
