@@ -1,6 +1,6 @@
 export default function SidebarNav() {
   return (
-    <div className="absolute left-[90px] top-[160px] z-20">
+    <div className="hidden lg:block absolute left-[90px] top-[160px] z-20">
       <h2 className="text-white text-[36px] font-normal font-['Manrope'] capitalize leading-[46.8px] mb-[45px] max-w-[245px]">
         Social Enterprise Trailblazers
       </h2>
