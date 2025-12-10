@@ -12,15 +12,15 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "Top", link: "/" },
-    { name: "Report Overview", link: "social-enterprise" },
-    { name: "CEO Note", link: "ceo-note" },
-    { name: "Redefining Social Enterprise", link: "social-enterprise" },
-    { name: "Venture Building", link: "venture-building" },
-    { name: "Capability Development", link: "capability-development" },
-    { name: "Showcasing Trailblazers", link: "showcasing-trailblazers" },
-    { name: "raiSE Podcast", link: "raise-podcast" },
-    { name: "Financial Highlights", link: "financial-highlights" },
+    { name: "Top", link: "#top" },
+    { name: "Report Overview", link: "#social-enterprise" },
+    { name: "CEO Note", link: "#ceo-note" },
+    { name: "Redefining Social Enterprise", link: "#social-enterprise" },
+    { name: "Venture Building", link: "#venture-building" },
+    { name: "Capability Development", link: "#capability-development" },
+    { name: "Showcasing Trailblazers", link: "#showcasing-trailblazers" },
+    { name: "raiSE Podcast", link: "#raise-podcast" },
+    { name: "Financial Highlights", link: "#financial-highlights" },
   ]
 
   return (

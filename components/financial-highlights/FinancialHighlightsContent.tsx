@@ -16,11 +16,17 @@ export default function FinancialHighlightsContent() {
   `
 
   return (
-    <div className="min-h-screen bg-white" id="financial-highlights">
+    <div className="min-h-screen bg-white relative" id="financial-highlights">
       <style dangerouslySetInnerHTML={{ __html: responsiveTableStyles }} />
       
+      {/* Gradient Header */}
+      <div 
+        className="absolute top-0 left-0 right-0 h-64 z-0"
+        style={{ background: "linear-gradient(180deg, rgba(108, 7, 99, 0.8) 0%, rgba(108, 7, 99, 0.3) 70%, transparent 100%)" }}
+      />
+      
       {/* Report Content */}
-      <div className="bg-white">
+      <div className="relative z-10">
         {/* Hero Section */}
         <div className="pt-32 sm:pt-40 pb-8 sm:pb-12 md:pb-16 px-4 sm:px-6 md:px-12 lg:px-24">
           <h1 className="text-[#8E2475] text-[28px] sm:text-[32px] md:text-[36px] font-['Aleo'] font-medium leading-[36px] sm:leading-[40px] md:leading-[46.8px]">

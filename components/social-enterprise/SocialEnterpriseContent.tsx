@@ -17,12 +17,18 @@ import SocialImpactReportSection from "@/components/social-enterprise/SocialImpa
 export default function SocialEnterpriseContent() {
   return (
     <div className="relative min-h-screen bg-white" id="social-enterprise">
-      <div className="flex flex-col md:flex-row">
+      {/* Gradient Header */}
+      <div 
+        className="absolute top-0 left-0 right-0 h-64 z-0"
+        style={{ background: "linear-gradient(180deg, rgba(108, 7, 99, 0.8) 0%, rgba(108, 7, 99, 0.3) 70%, transparent 100%)" }}
+      />
+      
+      <div className="flex flex-col md:flex-row relative z-10">
         {/* Left Side - Blank/White with Logo and Navigation */}
         <LeftSidebar />
 
         {/* Right Side - Report Content */}
-        <div className="w-full md:w-2/3 min-h-screen bg-white overflow-hidden ml-0 md:ml-auto">
+        <div className="w-full md:w-2/3 min-h-screen overflow-hidden ml-0 md:ml-auto">
           {/* Main Content */}
           <div className="max-w-full px-6 md:px-12 pt-24 md:pt-32">
             <HeaderSection />

@@ -10,7 +10,7 @@ interface SidebarNavigationProps {
 
 export default function SidebarNavigation({ items }: SidebarNavigationProps) {
   return (
-    <div className="fixed left-[90px] top-[325px] z-40">
+    <div>
       <div className="flex flex-col gap-10">
         {items.map((item, index) => (
           <div key={index} className="flex items-center gap-4">

@@ -96,7 +96,8 @@ export default function PurpoSEAgendaCard() {
             {/* Left - Description */}
             <div className="max-w-full lg:max-w-[446px]">
               <p className="text-white text-lg md:text-xl lg:text-[22px] font-medium font-['Manrope'] leading-relaxed md:leading-[28.6px]">
-              At Echelon 2024, a tech business conference held on 15-16 May 2024, raiSE hosted a dedicated pavilion featuring seven of our Social Enterprises.
+     The PurpoSE Agenda provided a 
+high-profile platform for Social Enterprises to connect with investors, stakeholders, and partners, while spotlighting panelists, entrepreneurs, leaders, and students across our channels.
               </p>
             </div>
 
@@ -105,30 +106,30 @@ export default function PurpoSEAgendaCard() {
               {/* Stat 1 */}
               <div className="flex items-start gap-4 md:gap-5 lg:gap-[20px]">
                 <div className="text-right text-[#FFFBFB] text-2xl md:text-3xl lg:text-[40px] font-normal font-['Aleo'] leading-tight md:leading-[44px]">
-                  7 SEs
+                  $50K
                 </div>
                 <div className="max-w-full md:max-w-[172px] text-[#FFFBFB] text-sm md:text-base lg:text-[16px] font-medium font-['Manrope'] capitalize leading-tight md:leading-[20px]">
-                  Showcased at raiSE's Pavilion
+                  EnergiSE Grants awarded To 10 Companies 
                 </div>
               </div>
 
               {/* Stat 2 */}
               <div className="flex items-start gap-4 md:gap-5 lg:gap-[20px]">
                 <div className="text-right text-[#FFFBFB] text-2xl md:text-3xl lg:text-[40px] font-normal font-['Aleo'] leading-tight md:leading-[44px]">
-                  2-day
+                  125+
                 </div>
                 <div className="max-w-full md:max-w-[142px] text-[#FFFBFB] text-sm md:text-base lg:text-[16px] font-medium font-['Manrope'] capitalize leading-tight md:leading-[20px]">
-                 Tech conference Spotlight social innovation
+          Leaders united to spark bold conversations
                 </div>
               </div>
 
               {/* Stat 3 */}
               <div className="flex items-start gap-4 md:gap-5 lg:gap-[20px]">
                 <div className="text-right text-[#FFFBFB] text-2xl md:text-3xl lg:text-[40px] font-normal font-['Aleo'] leading-tight md:leading-[44px]">
-                 1 Message
+                9 SEs
                 </div>
                 <div className="max-w-full md:max-w-[142px] text-[#FFFBFB] text-sm md:text-base lg:text-[16px] font-medium font-['Manrope'] capitalize leading-tight md:leading-[20px]">
-        Social Enterprise are the Future of business
+        Led fireside chats & aMA circles
                 </div>
               </div>
             </div>

@@ -4,46 +4,20 @@ export default function MembersPortalSection() {
   return (
     <div className="mb-12 md:mb-16 md:ml-16 lg:ml-24 xl:ml-32">
       {/* Section Header */}
-      <div className="mb-8 md:mb-12">
+      <div className="mb-2">
         <div className="mb-4 text-lg md:text-[20px] font-semibold text-[#A374FF]">NEW</div>
-        <h2 className="mb-6 md:mb-8 font-aleo text-2xl md:text-[36px] font-medium leading-tight md:leading-[40px] text-[#9B2683] max-w-full md:max-w-[771px]">
+        <h2 className="mb-2 font-aleo text-2xl md:text-[36px] font-medium leading-tight md:leading-[40px] text-[#9B2683] max-w-full md:max-w-[771px]">
           Our New raiSE Members' Portal & Directory
         </h2>
       </div>
 
       {/* Portal Images */}
-      <div className="mb-8 md:mb-12 relative">
-        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-start">
-          {/* First Image with Icon */}
-          <div className="relative flex-shrink-0">
-            <img 
-              src="/social/portal-screen-1.png" 
-              alt="Members Portal Screen 1"
-              className="w-full md:w-[273px] h-auto object-contain"
-            />
-            <div className="absolute top-[12px] left-[10px] w-[35px] md:w-[41px] h-[35px] md:h-[41px] rounded-full border border-[#767676] shadow-md bg-white flex items-center justify-center">
-              <img 
-                src="/social/portal-icon.png" 
-                alt="Portal Icon"
-                className="w-[25px] md:w-[30px] h-[25px] md:h-[30px] object-contain"
-              />
-            </div>
-          </div>
-          
-          {/* Second Image */}
-          <img 
-            src="/social/portal-screen-2.png" 
-            alt="Members Portal Screen 2"
-            className="w-full md:w-[257px] h-auto object-contain"
-          />
-          
-          {/* Third Image */}
-          <img 
-            src="/social/portal-screen-3.png" 
-            alt="Members Portal Screen 3"
-            className="w-full md:w-[288px] h-auto object-contain"
-          />
-        </div>
+      <div className="mb-2">
+        <img 
+          src="/social/k1.jpg" 
+          alt="Members Portal Screen"
+          className="w-full md:w-[750px] lg:w-[900px] h-auto object-contain"
+        />
       </div>
 
       {/* Description */}

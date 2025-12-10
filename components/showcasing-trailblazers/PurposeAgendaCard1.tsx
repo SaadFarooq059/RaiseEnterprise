@@ -20,64 +20,35 @@ export default function PurpoSEAgendaCard1() {
             <div className="flex gap-[14px] pb-4">
               <img 
                 className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda1.jpg" 
+                src="/showcasing-trailblazers/network1.png "
                 alt="PurpoSE Agenda 1"
               />
               <img 
                 className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda2.png" 
+                src="/showcasing-trailblazers/network2.png" 
                 alt="PurpoSE Agenda 2"
               />
               <img 
                 className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda3.png" 
+                src="/showcasing-trailblazers/network3.png" 
                 alt="PurpoSE Agenda 3"
               />
               <img 
                 className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda4.png" 
+                src="/showcasing-trailblazers/network4.png" 
                 alt="PurpoSE Agenda 4"
               />
               <img 
                 className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda5.png" 
+                src="/showcasing-trailblazers/network5.png" 
                 alt="PurpoSE Agenda 5"
               />
               <img 
                 className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda6.png" 
+                src="/showcasing-trailblazers/network6.png" 
                 alt="PurpoSE Agenda 6"
               />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda7.png" 
-                alt="PurpoSE Agenda 7"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda8.png" 
-                alt="PurpoSE Agenda 8"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda9.png" 
-                alt="PurpoSE Agenda 9"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda10.png" 
-                alt="PurpoSE Agenda 10"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda11.png" 
-                alt="PurpoSE Agenda 11"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda12.png" 
-                alt="PurpoSE Agenda 12"
-              />
+              
             </div>
           </div>
         </div>

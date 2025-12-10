@@ -2,7 +2,7 @@ import PurpleCard from "./PurpleCard"
 
 export default function PurpleCardsSection() {
   return (
-    <div className="mb-8 md:mb-12 flex flex-wrap justify-start gap-4 md:gap-6">
+    <div className="mb-8 md:mb-12 flex flex-wrap justify-center md:justify-start gap-4 md:gap-6">
       <PurpleCard 
         number="01" 
         title="Articulate their purpose with greater clarity"

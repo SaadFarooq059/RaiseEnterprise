@@ -138,25 +138,25 @@ export default function IncreasingVisibilitySection() {
           </p>
 
           {/* Layered Images Section */}
-          <div className="flex flex-col lg:flex-row items-start gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-12 lg:mb-[100px]">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-10 lg:mb-12">
             {/* Images Container with Layered Effect */}
             <div className="relative w-full lg:w-auto lg:pb-[120px]">
               {/* Front Image */}
               <div className="relative z-10">
-                <img 
-                  className="w-full lg:w-[607px] h-auto lg:h-[365px] rounded-[20px] md:rounded-[25px] lg:rounded-[30px] object-cover" 
-                  src="/showcasing-trailblazers/event6.png" 
-                  alt="Singapore Steward Leadership Award Recipients"
-                />
+          <img 
+            className="w-full lg:w-[607px] h-auto lg:h-[365px] rounded-[20px] md:rounded-[25px] lg:rounded-[30px] object-cover" 
+            src="/showcasing-trailblazers/event6.png" 
+            alt="Singapore Steward Leadership Award Recipients"
+          />
               </div>
               
               {/* Back Image - Positioned Behind and Below */}
-              <div className="relative lg:absolute lg:top-[40px] lg:left-[60px] lg:-z-10 mt-4 lg:mt-0">
-                <img 
-                  className="w-full lg:w-[607px] h-auto lg:h-[365px] rounded-[20px] md:rounded-[25px] lg:rounded-[30px] object-cover lg:opacity-90" 
-                  src="/showcasing-trailblazers/event7.png" 
-                  alt="Singapore Steward Leadership Event"
-                />
+              <div className="relative lg:absolute lg:top-[80px] lg:left-[60px] lg:-z-10 mt-4 lg:mt-0">
+          <img 
+            className="w-full lg:w-[607px] h-auto lg:h-[365px] rounded-[20px] md:rounded-[25px] lg:rounded-[30px] object-cover lg:opacity-90" 
+            src="/showcasing-trailblazers/event7.png" 
+            alt="Singapore Steward Leadership Event"
+          />
               </div>
             </div>
 

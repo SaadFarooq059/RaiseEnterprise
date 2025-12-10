@@ -7,7 +7,7 @@ export default function PurpoSEAgendaContent() {
       {/* Right Content */}
       <div>
         {/* First Paragraph */}
-        <div className="max-w-full lg:max-w-[805px] mb-12 md:mb-24 lg:mb-[238px]">
+        <div className="max-w-full lg:max-w-[805px] mb-6 md:mb-8 lg:mb-10">
           <p className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
             On 3 December 2024, we held the second edition of our flagship event, The PurpoSE Agenda, to spark bold conversations on collaborative financing models. The event brought together ecosystem partners, corporate stakeholders, venture capitalists, impact investors, and Social Enterprises who are leading the way in converging profit and purpose.<br/><br/>
             The morning opened with a closed-door session for funders and ecosystem partners, featuring a panel on "The Ecosystem Effect: Driving Catalytic Growth" and the announcement of the raiSE EnergiSE Grant recipients, each awarded $50,000 to scale their impact:
@@ -15,7 +15,7 @@ export default function PurpoSEAgendaContent() {
         </div>
 
         {/* Recipients Card */}
-        <div className="w-full lg:w-[812px] h-auto lg:h-[266px] bg-[#A564F7] rounded-[25px] md:rounded-[40px] lg:rounded-[50px] mb-8 md:mb-12 lg:mb-[67px] px-6 md:px-12 lg:px-[62px] py-6 md:py-8 lg:py-[40px]">
+        <div className="w-full lg:w-[812px] h-auto lg:h-[266px] bg-[#A564F7] rounded-[25px] md:rounded-[40px] lg:rounded-[50px] mb-6 md:mb-8 lg:mb-10 px-6 md:px-12 lg:px-[62px] py-6 md:py-8 lg:py-[40px]">
           <h3 className="text-[#FCD290] text-xl md:text-2xl lg:text-[25px] font-semibold font-['Manrope'] leading-relaxed md:leading-[36px] tracking-wide mb-4 md:mb-6 lg:mb-[26px]">
             raiSE EnergiSE Grant Recipients
           </h3>
