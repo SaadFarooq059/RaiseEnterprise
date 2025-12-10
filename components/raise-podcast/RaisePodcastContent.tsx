@@ -1,9 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 export default function RaisePodcastContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
   
   // Array of gallery images - add your images here
   const galleryImages = [
@@ -19,9 +21,31 @@ export default function RaisePodcastContent() {
     setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
   }
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [])
+
   return (
     <div 
-      className="min-h-screen w-full relative overflow-hidden"
+      ref={sectionRef}
+      className={`min-h-screen w-full relative overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       style={{ background: 'linear-gradient(180deg, #A374FF 0%, #6745BF 5%, #2A167F 20%)' }}
       id="raise-podcast"
     >

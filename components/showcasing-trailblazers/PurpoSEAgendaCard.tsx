@@ -23,11 +23,7 @@ export default function PurpoSEAgendaCard() {
                 src="/showcasing-trailblazers/purpose-agenda1.jpg" 
                 alt="PurpoSE Agenda 1"
               />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda2.png" 
-                alt="PurpoSE Agenda 2"
-              />
+            
               <img 
                 className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
                 src="/showcasing-trailblazers/purpose-agenda3.png" 

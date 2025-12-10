@@ -1,9 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 
 export default function CapabilityDevelopmentContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
   
   const galleryImages = [
     "/venture-building/t1.jpg",
@@ -19,8 +21,29 @@ export default function CapabilityDevelopmentContent() {
     setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
   }
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [])
+
   return (
-    <div className="min-h-screen w-full relative" id="capability-development">
+    <div ref={sectionRef} className={`min-h-screen w-full relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="capability-development">
       {/* Hero Section with Background Image */}
       <div className="w-full relative overflow-hidden">
         {/* Background Image - contained to hero section only */}
