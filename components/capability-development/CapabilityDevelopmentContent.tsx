@@ -1,10 +1,9 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useRef } from "react"
 
 export default function CapabilityDevelopmentContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
   
   const galleryImages = [
@@ -21,29 +20,10 @@ export default function CapabilityDevelopmentContent() {
     setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
   }
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
+  // Animation removed as per request
 
   return (
-    <div ref={sectionRef} className={`min-h-screen w-full relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="capability-development">
+    <div ref={sectionRef} className="min-h-screen w-full relative" id="capability-development">
       {/* Hero Section with Background Image */}
       <div className="w-full relative overflow-hidden">
         {/* Background Image - contained to hero section only */}
@@ -300,32 +280,32 @@ export default function CapabilityDevelopmentContent() {
             {/* Left Arrow */}
             <button 
               onClick={prevSlide}
-              className="flex-shrink-0 w-[50px] h-[50px] md:w-[73px] md:h-[72px] flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="flex-shrink-0 w-[40px] h-[40px] md:w-[73px] md:h-[72px] flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label="Previous image"
             >
               <svg width="73" height="72" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M23.8007 33H60.833V39H23.8007L40.834 55.8L36.4997 60L12.1663 36L36.4997 12L40.834 16.2L23.8007 33Z" fill="#FEF7FF"/>
+          <path d="M23.8007 33H60.833V39H23.8007L40.834 55.8L36.4997 60L12.1663 36L36.4997 12L40.834 16.2L23.8007 33Z" fill="#FEF7FF"/>
               </svg>
             </button>
             
             {/* Center Image */}
             <div className="flex-1 max-w-[781px] flex justify-center">
               <img 
-                src={galleryImages[currentSlide]} 
-                alt={`Gallery image ${currentSlide + 1}`}
-                className="w-full max-w-[781px] rounded-[20px] shadow-2xl transition-all duration-500"
-                style={{ aspectRatio: '781/582' }}
+          src={galleryImages[currentSlide]} 
+          alt={`Gallery image ${currentSlide + 1}`}
+          className="w-full max-w-[781px] rounded-[20px] shadow-2xl transition-all duration-500"
+          style={{ aspectRatio: '781/582', maxHeight: '60vw', objectFit: 'cover' }}
               />
             </div>
             
             {/* Right Arrow */}
             <button 
               onClick={nextSlide}
-              className="flex-shrink-0 w-[50px] h-[50px] md:w-[73px] md:h-[72px] flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="flex-shrink-0 w-[40px] h-[40px] md:w-[73px] md:h-[72px] flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label="Next image"
             >
               <svg width="73" height="72" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M49.1983 39H12.166V33H49.1983L32.165 16.2L36.4993 12L60.8327 36L36.4993 60L32.165 55.8L49.1983 39Z" fill="#FCD290"/>
+          <path d="M49.1983 39H12.166V33H49.1983L32.165 16.2L36.4993 12L60.8327 36L36.4993 60L32.165 55.8L49.1983 39Z" fill="#FCD290"/>
               </svg>
             </button>
           </div>
@@ -334,15 +314,24 @@ export default function CapabilityDevelopmentContent() {
           <div className="flex justify-center gap-2 mt-8">
             {galleryImages.map((_, index) => (
               <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-[#FCD290] w-8' : 'bg-white/50'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
+          key={index}
+          onClick={() => setCurrentSlide(index)}
+          className={`w-3 h-3 rounded-full transition-all ${
+            currentSlide === index ? 'bg-[#FCD290] w-8' : 'bg-white/50'
+          }`}
+          aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
+          <style jsx>{`
+            @media (max-width: 768px) {
+              img {
+          max-width: 100vw !important;
+          max-height: 55vw !important;
+          border-radius: 12px !important;
+              }
+            }
+          `}</style>
         </div>
 
         {/* Aligning Objectives Section */}

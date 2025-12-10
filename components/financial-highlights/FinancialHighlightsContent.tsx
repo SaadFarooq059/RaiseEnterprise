@@ -1,9 +1,7 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
-
+import { useRef } from "react"
 export default function FinancialHighlightsContent() {
-  const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
   // Add responsive styles for tables
@@ -20,29 +18,10 @@ export default function FinancialHighlightsContent() {
     }
   `
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
+  // Animation removed as per request
 
   return (
-    <div ref={sectionRef} className={`min-h-screen bg-white relative transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="financial-highlights">
+    <div ref={sectionRef} className="min-h-screen bg-white relative" id="financial-highlights">
       <style dangerouslySetInnerHTML={{ __html: responsiveTableStyles }} />
       
       {/* Gradient Header */}

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+// import { useEffect, useState, useRef } from "react"
 import LeftSidebar from "@/components/social-enterprise/LeftSidebar"
 import HeaderSection from "@/components/social-enterprise/HeaderSection"
 import PurpleCardsSection from "@/components/social-enterprise/PurpleCardsSection"
@@ -17,40 +17,18 @@ import ImpactAreasSection from "@/components/social-enterprise/ImpactAreasSectio
 import MembersPortalSection from "@/components/social-enterprise/MembersPortalSection"
 import SocialImpactReportSection from "@/components/social-enterprise/SocialImpactReportSection"
 
+// Animation removed as per request
+
 export default function SocialEnterpriseContent() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
-
   return (
-    <div ref={sectionRef} className="relative min-h-screen bg-white" id="social-enterprise">
+    <div className="relative min-h-screen bg-white" id="social-enterprise">
       {/* Gradient Header */}
       <div 
         className="absolute top-0 left-0 right-0 h-64 z-0"
         style={{ background: "linear-gradient(180deg, rgba(108, 7, 99, 0.8) 0%, rgba(108, 7, 99, 0.3) 70%, transparent 100%)" }}
       />
       
-      <div className={`flex flex-col md:flex-row relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+      <div className="flex flex-col md:flex-row relative z-10">
         {/* Left Side - Blank/White with Logo and Navigation */}
         <LeftSidebar />
 

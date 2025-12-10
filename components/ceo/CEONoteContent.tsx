@@ -1,42 +1,20 @@
 "use client"
 
-import { useEffect, useState, useRef } from "react"
+// import { useEffect, useState, useRef } from "react"
 import LeadingWithImpactSection from "@/components/ceo/LeadingWithImpactSection"
 import VentureBuildingSection from "@/components/ceo/VentureBuildingSection"
 import CapacityBuildingSection from "@/components/ceo/CapacityBuildingSection"
 import ShowcasingSection from "@/components/ceo/ShowcasingSection"
 import AdvocacyPartnershipsSection from "@/components/ceo/AdvocacyPartnershipsSection"
 
+// Animation removed as per request
+
 export default function CEONoteContent() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
-
   return (
-    <div ref={sectionRef} className="min-h-screen bg-gradient-to-b from-[#9B2683] to-[#512691] text-white font-sans" id="ceo-note">
+    <div className="min-h-screen bg-gradient-to-b from-[#9B2683] to-[#512691] text-white font-sans" id="ceo-note">
       {/* Hero Section - Full height, no top padding */}
       <div className="relative overflow-hidden">
-        <div className={`flex flex-col md:grid md:grid-cols-[1fr_1fr] xl:grid-cols-[1000px_1fr] md:h-screen transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="flex flex-col md:grid md:grid-cols-[1fr_1fr] xl:grid-cols-[1000px_1fr] md:h-screen">
           {/* Left - CEO Image */}
           <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-full">
             <img src="/ceo/hero.png" alt="CEO" className="w-full h-full object-cover object-top" />

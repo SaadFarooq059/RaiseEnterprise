@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useRef } from 'react'
+// import { useEffect, useState, useRef } from 'react'
 import MemberOnboardingSection from '@/components/showcasing-trailblazers/MemberOnboardingSection'
 import NetworkingNightSection from '@/components/showcasing-trailblazers/NetworkingNightSection'
 import PurpoSEAgendaHeader from '@/components/showcasing-trailblazers/PurpoSEAgendaHeader'
@@ -14,32 +14,13 @@ import PurpoSEAgendaHeader1 from './PurposeAgendaHeader1'
 import PurpoSEAgendaCard1 from './PurposeAgendaCard1'
 import PurpoSEAgendaContent1 from './PurposeAgendaContent1'
 
+
+
+
+  // Animation removed as per request
 export default function ShowcasingTrailblazersContent() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.disconnect() // Only trigger once for reliability
-        }
-      },
-      { threshold: 0.01 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
-
   return (
-    <div ref={sectionRef} className={`min-h-screen bg-white transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} id="showcasing-trailblazers">
+    <div className="min-h-screen bg-white" id="showcasing-trailblazers">
       {/* First Section - Increasing Visibility */}
       
 
