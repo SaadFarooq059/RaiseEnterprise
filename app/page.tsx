@@ -276,14 +276,20 @@ export default function Home() {
     {/* Social Enterprise Section */}
     <SocialEnterpriseContent />
 
-    {/* Showcasing Trailblazers Section */}
-    <ShowcasingTrailblazersContent />
+
 
     {/* Venture Building Section */}
     <VentureBuildingContent />
 
+
+
+
     {/* Capability Development Section */}
     <CapabilityDevelopmentContent />
+
+    {/* Showcasing Trailblazers Section */}
+    <ShowcasingTrailblazersContent />
+
 
     {/* raiSE Podcast Section */}
     <RaisePodcastContent />
