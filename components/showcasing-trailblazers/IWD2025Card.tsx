@@ -19,14 +19,24 @@ export default function IWD2025Card() {
           <div className="overflow-x-auto scrollbar-hide">
             <div className="flex gap-3 md:gap-[14px] pb-4">
               <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/iwd1.png" 
-                alt="IWD 2025 1"
+          className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+          src="/showcasing-trailblazers/j1.jpg" 
+          alt="IWD 2025 1"
               />
               <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/iwd2.png" 
-                alt="IWD 2025 2"
+          className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+          src="/showcasing-trailblazers/j2.jpg" 
+          alt="IWD 2025 2"
+              />
+              <img 
+          className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+          src="/showcasing-trailblazers/j3.jpg" 
+          alt="IWD 2025 3"
+              />
+              <img 
+          className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+          src="/showcasing-trailblazers/j4.jpg" 
+          alt="IWD 2025 4"
               />
             </div>
           </div>
