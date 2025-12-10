@@ -26,6 +26,7 @@ export default function Home() {
       defaultTextColor: "#FCD290",
       hoverTextColor: "#9B2683",
       className: "",
+      link: "/ceo-note",
     },
     {
       number: "01",
@@ -38,6 +39,7 @@ export default function Home() {
       defaultTextColor: "#FFFFFF",
       hoverTextColor: "#9B2683",
       className: "lg:mt-8",
+      link: "/social-enterprise",
     },
     {
       number: "02",
@@ -50,6 +52,7 @@ export default function Home() {
       defaultTextColor: "#9B2683",
       hoverTextColor: "#FFFFFF",
       className: "",
+      link: "/venture-building",
     },
     {
       number: "03",
@@ -62,6 +65,7 @@ export default function Home() {
       defaultTextColor: "#A564F7",
       hoverTextColor: "#FFFFFF",
       className: "lg:mt-8",
+      link: "/capability-development",
     },
     {
       number: "04",
@@ -74,6 +78,7 @@ export default function Home() {
       defaultTextColor: "#7479ED",
       hoverTextColor: "#FFFFFF",
       className: "",
+      link: "/showcasing-trailblazers",
     },
     {
       number: "05",
@@ -86,6 +91,7 @@ export default function Home() {
       defaultTextColor: "#2A167F",
       hoverTextColor: "#FFFFFF",
       className: "lg:mt-8",
+      link: "/raise-podcast",
     },
   ]
 
@@ -129,6 +135,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className=""
+                link={card.link}
               />
             </div>
           ))}
@@ -153,6 +160,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredCard(0)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className=""
+                link={cards[0].link}
               />
             </div>
             <div className={`transition-all duration-1000 delay-[1100ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -170,6 +178,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredCard(2)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className=""
+                link={cards[2].link}
               />
             </div>
             <div className={`transition-all duration-1000 delay-[1300ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -187,6 +196,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredCard(4)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className=""
+                link={cards[4].link}
               />
             </div>
           </div>
@@ -208,6 +218,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredCard(1)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className=""
+                link={cards[1].link}
               />
             </div>
             <div className={`transition-all duration-1000 delay-[1200ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -225,6 +236,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredCard(3)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className=""
+                link={cards[3].link}
               />
             </div>
             <div className={`transition-all duration-1000 delay-[1400ms] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -242,6 +254,7 @@ export default function Home() {
                 onMouseEnter={() => setHoveredCard(5)}
                 onMouseLeave={() => setHoveredCard(null)}
                 className=""
+                link={cards[5].link}
               />
             </div>
           </div>

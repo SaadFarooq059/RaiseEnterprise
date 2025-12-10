@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+
 interface ReportCardProps {
   number: string
   title: string
@@ -14,6 +16,7 @@ interface ReportCardProps {
   onMouseEnter: () => void
   onMouseLeave: () => void
   className?: string
+  link?: string
 }
 
 export default function ReportCard({
@@ -30,8 +33,9 @@ export default function ReportCard({
   onMouseEnter,
   onMouseLeave,
   className = "",
+  link,
 }: ReportCardProps) {
-  return (
+  const CardContent = (
     <div
       className={`relative w-full h-auto min-h-[450px] lg:h-[650px] rounded-[20px] lg:rounded-[33px] p-4 lg:p-6 shadow-[0px_5px_15px_rgba(0,0,0,0.17)] transition-all duration-300 hover:shadow-2xl flex flex-col ${className}`}
       style={{ background: isHovered ? hoverBg : defaultBg }}
@@ -102,4 +106,14 @@ export default function ReportCard({
       </div>
     </div>
   )
+
+  if (link) {
+    return (
+      <Link href={link}>
+        {CardContent}
+      </Link>
+    )
+  }
+
+  return CardContent
 }
