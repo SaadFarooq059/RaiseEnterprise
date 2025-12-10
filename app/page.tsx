@@ -4,6 +4,13 @@ import Navbar from "@/components/navbar"
 import ReportCard from "@/components/report-card"
 import HeroSection from "@/components/hero-section"
 import { useState, useEffect } from "react"
+import SocialEnterpriseContent from "@/components/social-enterprise/SocialEnterpriseContent"
+import CEONoteContent from "@/components/ceo/CEONoteContent"
+import ShowcasingTrailblazersContent from "@/components/showcasing-trailblazers/ShowcasingTrailblazersContent"
+import VentureBuildingContent from "@/components/venture-building/VentureBuildingContent"
+import CapabilityDevelopmentContent from "@/components/capability-development/CapabilityDevelopmentContent"
+import RaisePodcastContent from "@/components/raise-podcast/RaisePodcastContent"
+import FinancialHighlightsContent from "@/components/financial-highlights/FinancialHighlightsContent"
 
 export default function Home() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
@@ -96,10 +103,11 @@ export default function Home() {
   ]
 
   return (
-    <main
-      className="min-h-screen"
-      style={{ background: "linear-gradient(180deg, #4A2281 0%, #681968 12%, #7A56C4 100%)" }}
-    >
+    <>
+      <main
+        className="min-h-screen"
+        style={{ background: "linear-gradient(180deg, #4A2281 0%, #681968 12%, #7A56C4 100%)" }}
+      >
       {/* Logo - Separate from navbar, on the left */}
       <div className="fixed left-8 top-6 z-50"></div>
 
@@ -261,5 +269,27 @@ export default function Home() {
         </div>
       </div>
     </main>
+
+    {/* CEO Note Section */}
+    <CEONoteContent />
+
+    {/* Social Enterprise Section */}
+    <SocialEnterpriseContent />
+
+    {/* Showcasing Trailblazers Section */}
+    <ShowcasingTrailblazersContent />
+
+    {/* Venture Building Section */}
+    <VentureBuildingContent />
+
+    {/* Capability Development Section */}
+    <CapabilityDevelopmentContent />
+
+    {/* raiSE Podcast Section */}
+    <RaisePodcastContent />
+
+    {/* Financial Highlights Section */}
+    <FinancialHighlightsContent />
+    </>
   )
 }

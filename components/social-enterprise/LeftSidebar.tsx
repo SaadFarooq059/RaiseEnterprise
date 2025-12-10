@@ -2,7 +2,7 @@ import SidebarNavigation from "./SidebarNavigation"
 
 export default function LeftSidebar() {
   return (
-    <div className="w-full md:w-1/3 min-h-screen bg-white relative">
+    <div className="hidden md:block md:w-1/3 min-h-screen bg-white relative">
      
 
       {/* Main Heading */}

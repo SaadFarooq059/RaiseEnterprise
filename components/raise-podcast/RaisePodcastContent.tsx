@@ -1,16 +1,14 @@
 "use client"
 
-import Navbar from "@/components/navbar"
 import { useState } from "react"
 
-export default function RaisePodcast() {
+export default function RaisePodcastContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
   
   // Array of gallery images - add your images here
   const galleryImages = [
     "/podcast/gallery-1.jpg",
     "/podcast/gallery-2.jpg",
-    
   ]
   
   const nextSlide = () => {
@@ -25,9 +23,8 @@ export default function RaisePodcast() {
     <div 
       className="min-h-screen w-full relative overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #A374FF 0%, #6745BF 5%, #2A167F 20%)' }}
+      id="raise-podcast"
     >
-      <Navbar />
-      
       {/* Hero Section */}
       <div className="pt-44 px-6 w-full max-w-[1448px] mx-auto">
         <div className="max-w-[1192px] mx-auto">
@@ -75,10 +72,6 @@ export default function RaisePodcast() {
           }}
         />
       </div>
-      
-     
-      
-      
     </div>
   )
 }
