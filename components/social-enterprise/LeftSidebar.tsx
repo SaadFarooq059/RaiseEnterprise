@@ -16,12 +16,12 @@ export default function LeftSidebar() {
       <div className="absolute left-4 md:left-8 top-64 md:top-[325px]">
         <SidebarNavigation 
           items={[
-            { label: "SE Landscape Overview", isActive: true },
-            { label: "Membership Framework", badge: "NEW" },
-            { label: "Membership Categories", badge: "NEW" },
-            { label: "Impact Areas", badge: "NEW" },
-            { label: "Membership Portal", badge: "NEW" },
-            { label: "Social Impact Report", badge: "NEXT" },
+            { label: "SE Landscape Overview", isActive: true, link: "#se-landscape" },
+            { label: "Membership Framework", badge: "NEW", link: "#membership-framework" },
+            { label: "Membership Categories", badge: "NEW", link: "#membership-categories" },
+            { label: "Impact Areas", badge: "NEW", link: "#impact-areas" },
+            { label: "Membership Portal", badge: "NEW", link: "#membership-portal" },
+            { label: "Social Impact Report", badge: "NEXT", link: "#social-impact-report" },
           ]}
         />
       </div>

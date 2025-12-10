@@ -2,6 +2,7 @@ interface NavigationItem {
   label: string
   badge?: "NEW" | "NEXT"
   isActive?: boolean
+  link?: string
 }
 
 interface SidebarNavigationProps {
@@ -13,7 +14,7 @@ export default function SidebarNavigation({ items }: SidebarNavigationProps) {
     <div>
       <div className="flex flex-col gap-10">
         {items.map((item, index) => (
-          <div key={index} className="flex items-center gap-4">
+          <a key={index} href={item.link} className="flex items-center gap-4 cursor-pointer hover:opacity-80 transition-opacity">
             <div className="h-px w-[42px] bg-[#A374FF]" />
             <div className={`text-[13px] ${item.isActive ? 'font-bold underline' : 'font-medium'} text-[#9B2683]`}>
               {item.badge && (
@@ -21,7 +22,7 @@ export default function SidebarNavigation({ items }: SidebarNavigationProps) {
               )}
               {item.label}
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

@@ -31,7 +31,9 @@ export default function SocialEnterpriseContent() {
         <div className="w-full md:w-2/3 min-h-screen overflow-hidden ml-0 md:ml-auto">
           {/* Main Content */}
           <div className="max-w-full px-6 md:px-12 pt-24 md:pt-32">
-            <HeaderSection />
+            <div id="se-landscape">
+              <HeaderSection />
+            </div>
             
             <PurpleCardsSection />
 
@@ -45,25 +47,35 @@ export default function SocialEnterpriseContent() {
             
             <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
 
-            <CoreAttributesSection />
+            <div id="membership-framework">
+              <CoreAttributesSection />
+            </div>
 
             <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
 
-            <MembershipCategoriesSection />
+            <div id="membership-categories">
+              <MembershipCategoriesSection />
+            </div>
 
             <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
 
-            <ImpactAreasSection />
+            <div id="impact-areas">
+              <ImpactAreasSection />
+            </div>
 
             <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
 
-            <MembersPortalSection />
+            <div id="membership-portal">
+              <MembersPortalSection />
+            </div>
 
             <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
           </div>
 
           {/* Footer Section - Outside padding container */}
-          <SocialImpactReportSection />
+          <div id="social-impact-report">
+            <SocialImpactReportSection />
+          </div>
         </div>
       </div>
     </div>
