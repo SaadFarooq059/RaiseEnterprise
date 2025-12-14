@@ -33,7 +33,7 @@ export default function Home() {
       defaultTextColor: "#FCD290",
       hoverTextColor: "#9B2683",
       className: "",
-      link: "/ceo-note",
+      link: "#ceo-note",
     },
     {
       number: "01",
@@ -46,7 +46,7 @@ export default function Home() {
       defaultTextColor: "#FFFFFF",
       hoverTextColor: "#9B2683",
       className: "lg:mt-8",
-      link: "/social-enterprise",
+      link: "#social-enterprise",
     },
     {
       number: "02",
@@ -59,7 +59,7 @@ export default function Home() {
       defaultTextColor: "#9B2683",
       hoverTextColor: "#FFFFFF",
       className: "",
-      link: "/venture-building",
+      link: "#venture-building",
     },
     {
       number: "03",
@@ -72,7 +72,7 @@ export default function Home() {
       defaultTextColor: "#A564F7",
       hoverTextColor: "#FFFFFF",
       className: "lg:mt-8",
-      link: "/capability-development",
+      link: "#capability-development",
     },
     {
       number: "04",
@@ -85,7 +85,7 @@ export default function Home() {
       defaultTextColor: "#7479ED",
       hoverTextColor: "#FFFFFF",
       className: "",
-      link: "/showcasing-trailblazers",
+      link: "#showcasing-trailblazers",
     },
     {
       number: "05",
@@ -98,7 +98,7 @@ export default function Home() {
       defaultTextColor: "#2A167F",
       hoverTextColor: "#FFFFFF",
       className: "lg:mt-8",
-      link: "/raise-podcast",
+      link: "#raise-podcast",
     },
   ]
 
