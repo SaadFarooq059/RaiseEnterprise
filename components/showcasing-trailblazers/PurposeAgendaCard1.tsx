@@ -56,8 +56,8 @@ export default function PurpoSEAgendaCard1() {
         {/* Event Snapshot Badge and Stats */}
         <div className="relative px-[25px] pb-[80px]">
           {/* Badge */}
-          <div className="w-[204px] h-[47px] bg-[#FCD290] rounded-[40px] flex items-center justify-center mb-[71px]">
-            <span className="text-[#2A167F] text-[15px] font-semibold font-['Aleo'] leading-[15px]">
+       <div className="w-[180px] md:w-[204px] h-[40px] md:h-[47px] bg-[#FCD290] rounded-[40px] flex items-center justify-center mb-4 md:mb-6 lg:mb-[24px]">
+            <span className="text-[#2A167F] text-sm md:text-[15px] font-semibold font-['Aleo'] leading-[15px]">
               EVENT SNAPSHOT
             </span>
           </div>
@@ -66,8 +66,17 @@ export default function PurpoSEAgendaCard1() {
           <div className="flex gap-[106px]">
             {/* Left - Description */}
             <div className="max-w-[446px]">
-              <p className="text-white text-[22px] font-medium font-['Manrope'] leading-[28.6px]">
-                The PurpoSE Agenda provided a high-profile platform for Social Enterprises to connect with investors, stakeholders, and partners, while spotlighting panelists, entrepreneurs, leaders, and students across our channels.
+              <p
+              style={{
+                color: 'white',
+                fontSize: 22,
+                fontFamily: 'Manrope',
+                fontWeight: 500,
+                lineHeight: '28.6px',
+                wordWrap: 'break-word',
+              }}
+              >
+              At Echelon 2024, a tech business conference held on 15-16 May 2024, raiSE hosted a dedicated pavilion<br/>featuring seven of our Social Enterprises.<br/><br/>
               </p>
             </div>
 
@@ -76,30 +85,30 @@ export default function PurpoSEAgendaCard1() {
               {/* Stat 1 */}
               <div className="flex items-start gap-[20px]">
                 <div className="text-right text-[#FFFBFB] text-[40px] font-normal font-['Aleo'] leading-[44px]">
-                  $50K
+                  7 SEs
                 </div>
-                <div className="max-w-[172px] text-[#FFFBFB] text-[16px] font-medium font-['Manrope'] capitalize leading-[20px]">
-                  EnergiSE Grants awarded To 10 Companies
+                <div className="w-full max-w-[172px] text-[#FFFBFB] font-medium font-['Manrope'] capitalize ml-12" style={{fontSize: 14, lineHeight: '18.2px', wordWrap: 'break-word'}}>
+                Showcased at raiSE’s Pavilion
                 </div>
               </div>
 
               {/* Stat 2 */}
               <div className="flex items-start gap-[20px]">
                 <div className="text-right text-[#FFFBFB] text-[40px] font-normal font-['Aleo'] leading-[44px]">
-                  125+
+            2-day 
                 </div>
-                <div className="max-w-[142px] text-[#FFFBFB] text-[16px] font-medium font-['Manrope'] capitalize leading-[20px]">
-                  Leaders united to spark bold conversations
+                <div className="w-full max-w-[142px] text-[#FFFBFB] font-medium font-['Manrope'] capitalize ml-12" style={{fontSize: 14, lineHeight: '18.2px', wordWrap: 'break-word'}}>
+                Tech conference Spotlight social innovation
                 </div>
               </div>
 
               {/* Stat 3 */}
               <div className="flex items-start gap-[20px]">
                 <div className="text-right text-[#FFFBFB] text-[40px] font-normal font-['Aleo'] leading-[44px]">
-                  9 SEs
+                  1 Message
                 </div>
-                <div className="max-w-[142px] text-[#FFFBFB] text-[16px] font-medium font-['Manrope'] capitalize leading-[20px]">
-                  Led fireside chats & aMA circles
+                <div className="w-full max-w-[142px] text-[#FFFBFB] font-medium font-['Manrope'] capitalize ml-12" style={{fontSize: 14, lineHeight: '18.2px', wordWrap: 'break-word'}}>
+           Social Enterprise are the Future of business
                 </div>
               </div>
             </div>

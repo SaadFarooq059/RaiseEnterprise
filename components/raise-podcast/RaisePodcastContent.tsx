@@ -66,14 +66,11 @@ export default function RaisePodcastContent() {
       
       {/* Podcast Image */}
       <div className="mt-16 md:mt-24 px-6 pb-20 flex justify-center">
-        <img 
-          src="/podcast/podcast-hero.jpg" 
-          alt="raiSE Podcast" 
-          className="w-full max-w-[1192px] rounded-[33px]"
-          style={{
-            aspectRatio: '1192/658'
-          }}
-        />
+          <img 
+            src="/podcast/podcast-hero.jpg" 
+            alt="raiSE Podcast" 
+            className="w-full max-w-[1192px] h-auto rounded-[33px] object-cover"
+          />
       </div>
     </div>
   )

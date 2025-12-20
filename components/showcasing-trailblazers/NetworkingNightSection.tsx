@@ -1,6 +1,43 @@
+import { useEffect, useRef } from 'react';
+
 export default function NetworkingNightSection() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const container = scrollContainerRef.current;
+    if (!section || !container) return;
+
+    const handleScroll = () => {
+      const sectionRect = section.getBoundingClientRect();
+      const sectionTop = sectionRect.top;
+      const sectionHeight = sectionRect.height;
+      const windowHeight = window.innerHeight;
+      
+      // Calculate scroll progress through this section
+      // Start when section enters viewport, end when it leaves
+      const scrollStart = windowHeight;
+      const scrollEnd = -sectionHeight;
+      const scrollRange = scrollStart - scrollEnd;
+      const scrollProgress = (scrollStart - sectionTop) / scrollRange;
+      
+      // Clamp between 0 and 1
+      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+      
+      // Calculate horizontal scroll distance
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      container.scrollLeft = maxScroll * clampedProgress;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="relative flex justify-end">
+    <div ref={sectionRef} className="relative flex justify-end mb-12 md:mb-20 lg:mb-32">
       {/* Content Container - Attached to right */}
       <div className="relative w-full" style={{ maxWidth: '1340px' }}>
         {/* Purple Card Background */}
@@ -14,9 +51,12 @@ export default function NetworkingNightSection() {
           }}
         ></div>
 
-        {/* Images Section - Scrollable */}
+        {/* Images Section - Scroll-linked */}
         <div className="relative pt-8 md:pt-12 lg:pt-[50px] pb-12 md:pb-16 lg:pb-[80px] pl-4 md:pl-6 lg:pl-[25px]">
-          <div className="overflow-x-auto scrollbar-hide">
+          <div 
+            ref={scrollContainerRef}
+            className="overflow-x-hidden scrollbar-hide"
+          >
             <div className="flex gap-3 md:gap-[13px] pb-4">
               <img 
                 className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
@@ -54,7 +94,7 @@ export default function NetworkingNightSection() {
 
         {/* Text Content */}
         <div className="relative px-4 md:px-6 lg:px-[25px] pb-12 md:pb-16 lg:pb-[80px]">
-          <div className="flex flex-col lg:flex-row lg:justify-between gap-6 md:gap-8 lg:gap-[50px]">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-[90px]">
             {/* Left - Heading */}
             <div className="flex-shrink-0">
               <div className="text-[#FCD290] text-lg md:text-[20px] font-semibold font-['Manrope'] leading-5 mb-6 md:mb-[37px]">
@@ -66,8 +106,8 @@ export default function NetworkingNightSection() {
             </div>
             
             {/* Right - Paragraph */}
-            <div className="w-full">
-              <p className="text-white text-base md:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]" style={{ wordWrap: 'break-word' }}>
+            <div className="max-w-full lg:max-w-[650px]">
+              <p className="text-white text-base md:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
                 On 10 December 2024, the raiSE Members' Networking Night brought together 22 raiSE Impact Community members and 51 Social Enterprise members for a light-hearted yet purposeful year-end celebration. <br/><br/>
                 Beyond marking the close of the year, the event served as a valuable platform for aspiring Social Entrepreneurs from the raiSE Impact Community to connect with established Social Enterprises that are already creating meaningful impact. <br/><br/>
                 Designed to spark connections and foster collaborations, the event facilitated meaningful conversations and encouraged the exchange of upcoming initiatives, ongoing projects, and potential opportunities for cross-sector partnerships.

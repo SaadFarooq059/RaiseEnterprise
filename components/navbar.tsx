@@ -7,13 +7,8 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
   const navItems = [
     { name: "Top", link: "#top" },
-    { name: "Report Overview", link: "#social-enterprise" },
     { name: "CEO Note", link: "#ceo-note" },
     { name: "Redefining Social Enterprise", link: "#social-enterprise" },
     { name: "Venture Building", link: "#venture-building" },
@@ -22,6 +17,43 @@ export default function Navbar() {
     { name: "raiSE Podcast", link: "#raise-podcast" },
     { name: "Financial Highlights", link: "#financial-highlights" },
   ]
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
+  // Scroll detection to update active nav item
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => ({
+        id: item.link.replace('#', ''),
+        name: item.name,
+        element: document.getElementById(item.link.replace('#', ''))
+      })).filter(section => section.element)
+
+      // Find which section is currently most visible
+      let currentSection = sections[0]?.name || "Top"
+
+      for (const section of sections) {
+        const rect = section.element.getBoundingClientRect()
+        // Check if section is in viewport (accounting for navbar height)
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          currentSection = section.name
+          break
+        }
+      }
+
+      setActiveItem(currentSection)
+    }
+
+    // Run on mount and on scroll
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <>
@@ -48,7 +80,21 @@ export default function Navbar() {
               <a
                 key={idx}
                 href={item.link}
-                onClick={() => setActiveItem(item.name)}
+                onClick={(e) => {
+                  e.preventDefault()
+                  const element = document.querySelector(item.link)
+                  if (element) {
+                    const offset = 100 // Adjust this value based on your navbar height
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                    const offsetPosition = elementPosition - offset
+
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    })
+                  }
+                  setActiveItem(item.name)
+                }}
                 className={`px-4 py-1 rounded-full text-[14px] whitespace-normal text-left leading-[14px] transition-all ${
                   isSelected
                     ? "bg-white text-[#9B2683] !font-bold"
@@ -130,7 +176,19 @@ export default function Navbar() {
                 <a
                   key={idx}
                   href={item.link}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault()
+                    const element = document.querySelector(item.link)
+                    if (element) {
+                      const offset = 80
+                      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                      const offsetPosition = elementPosition - offset
+
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                      })
+                    }
                     setActiveItem(item.name)
                     setIsMobileMenuOpen(false)
                   }}

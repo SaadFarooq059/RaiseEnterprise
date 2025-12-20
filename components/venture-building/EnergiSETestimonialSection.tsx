@@ -52,7 +52,7 @@ export default function EnergiSETestimonialSection() {
         <div className="w-full lg:w-[1080px] flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-20">
           {/* Quote and Image */}
           <div className="w-full flex flex-col lg:flex-row items-start gap-5 sm:gap-6 md:gap-8 lg:gap-10">
-            <p className="flex-1 text-[#2A167F] text-[16px] sm:text-[18px] md:text-[22px] lg:text-[28px] font-normal font-['Aleo'] italic leading-[24px] sm:leading-[26px] md:leading-[32px] lg:leading-[39.2px] whitespace-pre-line">
+            <p className="flex-1 text-[#2A167F] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] font-normal font-['Aleo'] italic leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[28px] whitespace-pre-line">
               {currentTestimonial.quote}
             </p>
             <img 

@@ -27,7 +27,7 @@ export default function ShowcasingTrailblazersContent() {
       {/* Second Section - Member Events */}
       <section 
         className="relative w-full overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #5C61DB 0%, #512691 30%)' }}
+        style={{ background: 'linear-gradient(180deg, #512691 0%, #5C61DB 30%)' }}
       >
         <MemberOnboardingSection />
         <NetworkingNightSection />
@@ -35,47 +35,46 @@ export default function ShowcasingTrailblazersContent() {
 
       {/* PurpoSE Agenda Section */}
       <section 
-        className="relative w-full overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #7479ED 0%, #512691 12%)' }}
-      >
-        <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[170px]">
-          <PurpoSEAgendaHeader />
-        </div>
-        <PurpoSEAgendaCard />
-        <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
-          <PurpoSEAgendaContent />
-        </div>
-      </section>
-
+      className="relative w-full overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #7479ED 0%, #512691 12%)' }}
+    >
+      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">
+        <PurpoSEAgendaHeader />
+      </div>
+      <PurpoSEAgendaCard />
+      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
+        <PurpoSEAgendaContent />
+      </div>
+    </section>
 
 {/* PurpoSE Agenda Section */}
 
-       <section 
-        className="relative w-full overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #7479ED 0%, #512691 12%)' }}
-      >
-        <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[170px]">
-          <PurpoSEAgendaHeader1 />
-        </div>
-        <PurpoSEAgendaCard1 />
-        <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
-          <PurpoSEAgendaContent1 />
-        </div>
-      </section>
+           <section 
+      className="relative w-full overflow-hidden"
+      style={{ background: 'linear-gradient(180deg,  #512691 12%)' }}
+    >
+      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">
+        <PurpoSEAgendaHeader1 />
+      </div>
+      <PurpoSEAgendaCard1 />
+      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
+        <PurpoSEAgendaContent1 />
+      </div>
+    </section>
 
       {/* IWD 2025 Section */}
-      <section 
-        className="relative w-full overflow-hidden"
-        style={{ background: 'linear-gradient(180deg, #512691 12%)' }}
-      >
-        <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[170px]">
-          <IWD2025Header />
-        </div>
-        <IWD2025Card />
-        <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
-          <IWD2025Content />
-        </div>
-      </section>
+        <section 
+      className="relative w-full overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #512691 12%)' }}
+    >
+      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">
+        <IWD2025Header />
+      </div>
+      <IWD2025Card />
+      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
+        <IWD2025Content />
+      </div>
+    </section>
 
 
       <section 

@@ -1,6 +1,35 @@
+import { useEffect, useRef } from 'react';
+
 export default function IWD2025Content() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const container = scrollContainerRef.current;
+    if (!section || !container) return;
+
+    const handleScroll = () => {
+      const sectionRect = section.getBoundingClientRect();
+      const sectionTop = sectionRect.top;
+      const sectionHeight = sectionRect.height;
+      const windowHeight = window.innerHeight;
+      const scrollStart = windowHeight;
+      const scrollEnd = -sectionHeight;
+      const scrollRange = scrollStart - scrollEnd;
+      const scrollProgress = (scrollStart - sectionTop) / scrollRange;
+      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      container.scrollLeft = maxScroll * clampedProgress;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-[415px_1fr] gap-0 lg:gap-[90px]">
+    <div ref={sectionRef} className="grid grid-cols-1 lg:grid-cols-[415px_1fr] gap-0 lg:gap-[90px]">
       {/* Left Sidebar - Empty space for SidebarNav */}
       <div className="hidden lg:block"></div>
 
@@ -24,7 +53,7 @@ export default function IWD2025Content() {
         </div>
 
         {/* Featured Founders - Row 1 */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-[19px] mb-4 md:mb-[19px]">
+        <div ref={scrollContainerRef} className="flex flex-col md:flex-row gap-4 md:gap-[19px] mb-4 md:mb-[19px] overflow-x-hidden">
           {/* Founder 1 - Vivian Lee */}
           <div className="flex gap-4 md:gap-[19px] items-start">
             <img 

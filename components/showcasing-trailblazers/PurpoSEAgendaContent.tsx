@@ -15,28 +15,27 @@ export default function PurpoSEAgendaContent() {
         </div>
 
         {/* Recipients Card */}
-        <div className="w-full lg:w-[812px] h-auto lg:h-[266px] bg-[#A564F7] rounded-[25px] md:rounded-[40px] lg:rounded-[50px] mb-6 md:mb-8 lg:mb-10 px-6 md:px-12 lg:px-[62px] py-6 md:py-8 lg:py-[40px]">
-          <h3 className="text-[#FCD290] text-xl md:text-2xl lg:text-[25px] font-semibold font-['Manrope'] leading-relaxed md:leading-[36px] tracking-wide mb-4 md:mb-6 lg:mb-[26px]">
-            raiSE EnergiSE Grant Recipients
-          </h3>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-[50px]">
-            <div className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
-              • Assistive Technologies<br/>
-              • Blind Mice Media<br/>
-              • ShareRight<br/>
-              • Digi-Up! Studio<br/>
-              • Speedback
-            </div>
-            <div className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
-              • HeartBid<br/>
-              • HomePal<br/>
-              • Little Changemakers<br/>
-              • Omnilabs Research<br/>
-              • The Courage Chapter
-            </div>
-          </div>
+         <div className="w-full lg:w-[812px] h-auto lg:h-[266px] bg-[#A564F7] rounded-[25px] md:rounded-[40px] lg:rounded-[50px] mb-6 md:mb-8 lg:mb-10 px-6 md:px-12 lg:px-[62px] py-6 md:py-8 lg:py-[40px]">
+      <h3 className="text-[#FCD290] text-xl md:text-2xl lg:text-[25px] font-semibold font-['Manrope'] leading-relaxed md:leading-[36px] tracking-wide mb-4 md:mb-6 lg:mb-[26px]">
+        raiSE EnergiSE Grant Recipients
+      </h3>
+      <div className="flex flex-col md:flex-row gap-4 md:gap-12 lg:gap-[140px]">
+        <div className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
+          • Assistive Technologies<br/>
+          • Blind Mice Media<br/>
+          • ShareRight<br/>
+          • Digi-Up! Studio<br/>
+          • Speedback
         </div>
-
+        <div className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
+          • HeartBid<br/>
+          • HomePal<br/>
+          • Little Changemakers<br/>
+          • Omnilabs Research<br/>
+          • The Courage Chapter
+        </div>
+      </div>
+    </div>
         {/* Second Paragraph */}
         <div className="max-w-full lg:max-w-[809px]">
           <p className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">

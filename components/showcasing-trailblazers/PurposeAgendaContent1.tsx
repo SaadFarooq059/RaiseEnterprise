@@ -1,6 +1,35 @@
+import { useEffect, useRef } from 'react';
+
 export default function PurpoSEAgendaContent1() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const container = scrollContainerRef.current;
+    if (!section || !container) return;
+
+    const handleScroll = () => {
+      const sectionRect = section.getBoundingClientRect();
+      const sectionTop = sectionRect.top;
+      const sectionHeight = sectionRect.height;
+      const windowHeight = window.innerHeight;
+      const scrollStart = windowHeight;
+      const scrollEnd = -sectionHeight;
+      const scrollRange = scrollStart - scrollEnd;
+      const scrollProgress = (scrollStart - sectionTop) / scrollRange;
+      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      container.scrollLeft = maxScroll * clampedProgress;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div className="grid grid-cols-[415px_1fr] gap-[90px]">
+    <div ref={sectionRef} className="grid grid-cols-[415px_1fr] gap-[90px]">
       {/* Left Sidebar - Empty space for SidebarNav */}
       <div></div>
 
@@ -15,26 +44,25 @@ export default function PurpoSEAgendaContent1() {
         </div>
 
         {/* Recipients Card */}
-        <div className="w-[812px] h-[266px] bg-[#A564F7] rounded-[50px] mb-4 px-[62px] py-[40px]">
-          <h3 className="text-[#FCD290] text-[25px] font-semibold font-['Manrope'] leading-[36px] tracking-wide mb-[26px]">
-            Featured Social Enterprises
-          </h3>
-          <div className="flex gap-[50px]">
-            <div className="text-white text-[18px] font-medium font-['Manrope'] leading-[23.4px]">
-              • Tictag<br/>
-              • Foreword Coffee<br/>
-              • School of Concepts<br/>
-              • Innervate Fitness
-            </div>
-            <div className="text-white text-[18px] font-medium font-['Manrope'] leading-[23.4px]">
-              • Findjobs<br/>
-              • Octopus8<br/>
-              • Stick 'Em
-            </div>
-          </div>
+       <div ref={scrollContainerRef} className="w-[812px] h-[266px] bg-[#A564F7] rounded-[50px] mb-4 px-[62px] py-[40px] overflow-x-hidden">
+      <h3 className="text-[#FCD290] text-[25px] font-semibold font-['Manrope'] leading-[36px] tracking-wide mb-[26px]">
+        Featured Social Enterprises
+      </h3>
+      <div className="flex gap-[250px]">
+        <div className="text-white text-[18px] font-medium font-['Manrope'] leading-[23.4px]">
+          • Tictag<br/>
+          • Foreword Coffee<br/>
+          • School of Concepts<br/>
+          • Innervate Fitness
         </div>
+        <div className="text-white text-[18px] font-medium font-['Manrope'] leading-[23.4px]">
+          • Findjobs<br/>
+          • Octopus8<br/>
+          • Stick 'Em
+        </div>
+      </div>
+    </div>
 
-       
       </div>
     </div>
   )

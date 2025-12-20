@@ -6,7 +6,7 @@ export default function IWD2025Header() {
 
       {/* Header */}
       <div>
-        <div className="text-[#FCD290] text-lg md:text-[20px] font-semibold font-['Manrope'] leading-5 mb-2 lg:mb-[8px]">
+        <div className="text-[#FCD290] text-lg md:text-[20px] font-semibold font-['Manrope'] leading-5 mb-2 lg:mb-[28px]">
           CONNECTING THE ECOSYSTEM
         </div>
         <h2 className="text-white text-2xl md:text-3xl lg:text-[36px] font-medium font-['Aleo'] leading-tight md:leading-[46px] max-w-full lg:max-w-[787px]">

@@ -16,7 +16,7 @@ export default function HeroSection() {
         </h1>
         
         {/* Description */}
-        <p className="max-w-full sm:max-w-[500px] mt-6 sm:mt-8 md:mt-12 lg:mt-[88px] text-white text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-semibold font-['Manrope'] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-6">
+        <p className="max-w-full sm:max-w-[500px] mt-2 sm:mt-3 md:mt-4 lg:mt-6 text-white text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-semibold font-['Manrope'] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-6">
           We believe that nurturing the next generation of social entrepreneurs is crucial for the future of our ecosystem. Through our funding and accelerator programmes, we provide support to help them realise their vision for social change and build a business with purpose.
         </p>
       </div>
