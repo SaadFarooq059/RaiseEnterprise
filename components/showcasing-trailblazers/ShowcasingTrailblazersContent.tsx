@@ -13,7 +13,7 @@ import IncreasingVisibilitySection from '@/components/showcasing-trailblazers/In
 import PurpoSEAgendaHeader1 from './PurposeAgendaHeader1'
 import PurpoSEAgendaCard1 from './PurposeAgendaCard1'
 import PurpoSEAgendaContent1 from './PurposeAgendaContent1'
-
+import LeftSidebar1 from './leftsidebarshwocasing'
 import HeroSectionShowcasing from './heroshowcasing'
 
 

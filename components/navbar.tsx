@@ -35,6 +35,7 @@ export default function Navbar() {
       let currentSection = sections[0]?.name || "Top"
 
       for (const section of sections) {
+        if (!section.element) continue;
         const rect = section.element.getBoundingClientRect()
         // Check if section is in viewport (accounting for navbar height)
         if (rect.top <= 150 && rect.bottom >= 150) {
