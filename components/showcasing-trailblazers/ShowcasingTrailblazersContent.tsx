@@ -14,15 +14,17 @@ import PurpoSEAgendaHeader1 from './PurposeAgendaHeader1'
 import PurpoSEAgendaCard1 from './PurposeAgendaCard1'
 import PurpoSEAgendaContent1 from './PurposeAgendaContent1'
 
-
+import HeroSectionShowcasing from './heroshowcasing'
 
 
   // Animation removed as per request
 export default function ShowcasingTrailblazersContent() {
   return (
+
+   
     <div className="min-h-screen bg-white" id="showcasing-trailblazers">
       {/* First Section - Increasing Visibility */}
-      
+       <HeroSectionShowcasing />
 
       {/* Second Section - Member Events */}
       <section 
@@ -50,7 +52,7 @@ export default function ShowcasingTrailblazersContent() {
 {/* PurpoSE Agenda Section */}
 
            <section 
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden -mt-30"
       style={{ background: 'linear-gradient(180deg,  #512691 12%)' }}
     >
       <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">

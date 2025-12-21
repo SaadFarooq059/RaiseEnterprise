@@ -1,6 +1,34 @@
+"use client"
+import { useEffect, useRef, useState } from 'react';
+
 export default function PurpoSEAgendaCard1() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [isActive, setIsActive] = useState(false);
+
+  const images = [
+    { src: "/showcasing-trailblazers/network1.png ", alt: "PurpoSE Agenda 1" },
+    { src: "/showcasing-trailblazers/network2.png", alt: "PurpoSE Agenda 2" },
+    { src: "/showcasing-trailblazers/network3.png", alt: "PurpoSE Agenda 3" },
+    { src: "/showcasing-trailblazers/network4.png", alt: "PurpoSE Agenda 4" },
+    { src: "/showcasing-trailblazers/network5.png", alt: "PurpoSE Agenda 5" },
+    { src: "/showcasing-trailblazers/network6.png", alt: "PurpoSE Agenda 6" },
+  ];
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsActive(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="relative flex justify-end mb-[47px]">
+    <div ref={sectionRef} className="relative flex justify-end mb-[47px]">
       {/* Content Container - Attached to right */}
       <div className="relative w-full" style={{ maxWidth: '1340px' }}>
         {/* Purple Card Background */}
@@ -16,39 +44,28 @@ export default function PurpoSEAgendaCard1() {
 
         {/* Images Section - Scrollable */}
         <div className="relative pt-[23px] pb-[85px] pl-[25px]">
-          <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex gap-[14px] pb-4">
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/network1.png "
-                alt="PurpoSE Agenda 1"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/network2.png" 
-                alt="PurpoSE Agenda 2"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/network3.png" 
-                alt="PurpoSE Agenda 3"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/network4.png" 
-                alt="PurpoSE Agenda 4"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/network5.png" 
-                alt="PurpoSE Agenda 5"
-              />
-              <img 
-                className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/network6.png" 
-                alt="PurpoSE Agenda 6"
-              />
-              
+          <div className="overflow-x-hidden scrollbar-hide">
+            <div
+              className="flex w-max gap-[14px] pb-4 agenda-marquee"
+              style={{ animationPlayState: isActive ? "running" : "paused" }}
+            >
+              {images.map((image) => (
+                <img 
+                  key={image.src}
+                  className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
+                  src={image.src}
+                  alt={image.alt}
+                />
+              ))}
+              {images.map((image) => (
+                <img 
+                  key={`${image.src}-duplicate`}
+                  className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
+                  src={image.src}
+                  alt=""
+                  aria-hidden="true"
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -104,7 +121,7 @@ export default function PurpoSEAgendaCard1() {
 
               {/* Stat 3 */}
               <div className="flex items-start gap-[20px]">
-                <div className="text-right text-[#FFFBFB] text-[40px] font-normal font-['Aleo'] leading-[44px]">
+                <div className="text-right text-[#FFFBFB] -ml-20 text-[40px] font-normal font-['Aleo'] leading-[44px]">
                   1 Message
                 </div>
                 <div className="w-full max-w-[142px] text-[#FFFBFB] font-medium font-['Manrope'] capitalize ml-12" style={{fontSize: 14, lineHeight: '18.2px', wordWrap: 'break-word'}}>
@@ -115,6 +132,21 @@ export default function PurpoSEAgendaCard1() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .agenda-marquee {
+          animation: agendaMarquee 48s linear infinite;
+          will-change: transform;
+        }
+
+        @keyframes agendaMarquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   )
 }

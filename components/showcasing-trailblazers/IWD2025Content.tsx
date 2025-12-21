@@ -51,6 +51,13 @@ export default function IWD2025Content() {
             alt="IWD Event"
           />
         </div>
+           <div className="max-w-full lg:max-w-[806px] mb-8 md:mb-12 -mt-10 lg:mb-[60px]">
+          <p className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
+            Our Assistant CEO, Subashini Balakrishnan, joined the main panel to share strategies on overcoming self-doubt, the importance of community, and how Social Enterprises are at the forefront of driving inclusive work for women. <br/><br/>
+            A Social Enterprise Breakout Track on "Collaboration over Competition" moderated by our Director of Strategic Initiatives, Wei Shan Koh, attracted 125 participants and featured:
+          </p>
+        </div>
+
 
         {/* Featured Founders - Row 1 */}
         <div ref={scrollContainerRef} className="flex flex-col md:flex-row gap-4 md:gap-[19px] mb-4 md:mb-[19px] overflow-x-hidden">
@@ -71,7 +78,7 @@ export default function IWD2025Content() {
               <div className="text-[#FCD290] text-sm md:text-[16px] font-semibold font-['Manrope'] leading-tight md:leading-[20.8px] mb-2 md:mb-[8px]">
                 Go!Mama
               </div>
-              <p className="text-white text-xs md:text-[14px] font-medium font-['Manrope'] leading-relaxed md:leading-[18.2px]">
+              <p className="text-white text-xs md:text-[14px] font-medium font-['Manrope'] leading-relaxed md:leading-[18.2px] mt-2">
                 Go!Mama is dedicated to supporting breastfeeding mothers through innovative developments and simplifying access to dedicated lactation spaces
               </p>
             </div>
@@ -94,7 +101,7 @@ export default function IWD2025Content() {
               <div className="text-[#FCD290] text-sm md:text-[16px] font-medium font-['Manrope'] leading-tight md:leading-[20.8px] mb-2 md:mb-[8px]">
                 Skillseed Singapore
               </div>
-              <p className="text-white text-xs md:text-[14px] font-medium font-['Manrope'] leading-relaxed md:leading-[18.2px]">
+              <p className="text-white text-xs md:text-[14px] font-medium font-['Manrope'] leading-relaxed md:leading-[18.2px] mt-2">
                 Skillseed works with Social Service Organisations to foster a trust-driven and collaborative society through their experiential learning and capability building programmes
               </p>
             </div>
@@ -120,7 +127,7 @@ export default function IWD2025Content() {
               <div className="text-[#FCD290] text-sm md:text-[16px] font-medium font-['Manrope'] leading-tight md:leading-[20.8px] mb-2 md:mb-[8px]">
                 The Social Space
               </div>
-              <p className="text-white text-xs md:text-[14px] font-medium font-['Manrope'] leading-relaxed md:leading-[18.2px]">
+              <p className="text-white text-xs md:text-[14px] font-medium font-['Manrope'] leading-relaxed md:leading-[18.2px] mt-2">
                 The Social Space is a socially conscious multi concept store offering opportunities to differently abled individuals through skill acquisition and dignified employment
               </p>
             </div>
@@ -143,7 +150,7 @@ export default function IWD2025Content() {
               <div className="text-[#FCD290] text-sm md:text-[16px] font-medium font-['Manrope'] leading-tight md:leading-[20.8px] mb-2 md:mb-[8px]">
                 The Social Equity
               </div>
-              <p className="text-white text-xs md:text-[14px] font-medium font-['Manrope'] leading-relaxed md:leading-[18.2px]">
+              <p className="text-white text-xs md:text-[14px] font-medium font-['Manrope'] leading-relaxed md:leading-[18.2px] mt-2">
                 The Social Equity champions fair and equal opportunities through their job fairs, targeted resource mobilization and skills programme
               </p>
             </div>

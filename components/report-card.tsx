@@ -8,6 +8,7 @@ interface ReportCardProps {
   heading: string
   subtext?: string
   imageSrc: string
+  imageHeight?: string
   defaultBg: string
   hoverBg: string
   defaultTextColor: string
@@ -25,6 +26,7 @@ export default function ReportCard({
   heading,
   subtext,
   imageSrc,
+  imageHeight,
   defaultBg,
   hoverBg,
   defaultTextColor,
@@ -35,6 +37,7 @@ export default function ReportCard({
   className = "",
   link,
 }: ReportCardProps) {
+  const imageHeightClass = imageHeight ?? "h-[200px] lg:h-[320px]"
   const CardContent = (
     <div
       className={`relative w-full h-auto min-h-[450px] lg:h-[650px] rounded-[20px] lg:rounded-[33px] p-4 lg:p-6 shadow-[0px_5px_15px_rgba(0,0,0,0.17)] transition-all duration-300 hover:shadow-2xl flex flex-col ${className}`}
@@ -57,7 +60,7 @@ export default function ReportCard({
         </span>
       </div>
 
-      <div className="mb-4 lg:mb-6 w-full h-[200px] lg:h-[320px] rounded-[15px] lg:rounded-[33px] overflow-hidden">
+      <div className={`mb-4 lg:mb-6 w-full ${imageHeightClass} rounded-[15px] lg:rounded-[33px] overflow-hidden`}>
         <img
           src={imageSrc}
           alt={title}

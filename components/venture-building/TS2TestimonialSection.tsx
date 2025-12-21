@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 export default function TS2TestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const testimonials = [
     {
@@ -30,22 +31,30 @@ export default function TS2TestimonialSection() {
   ]
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    )
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+      )
+      setIsTransitioning(false)
+    }, 300)
   }
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    )
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+      )
+      setIsTransitioning(false)
+    }, 300)
   }
 
   const currentTestimonial = testimonials[currentIndex]
 
   return (
     <section 
-      className="w-full px-6 md:px-12 lg:px-[60px] py-12 md:py-16 lg:py-20"
+      className="w-full px-6 md:px-12 lg:px-[60px] py-16 md:py-24 lg:py-32"
       style={{ background: 'linear-gradient(180deg, white 15%, #A374FF 77%, #A374FF 100%)' }}
     >
       <div className="w-full max-w-[1320px] mx-auto flex flex-col lg:flex-row items-center gap-8 md:gap-10 lg:gap-12">
@@ -60,10 +69,10 @@ export default function TS2TestimonialSection() {
           </svg>
         </button>
 
-        <div className="w-full lg:w-[1080px] flex flex-col gap-12 md:gap-16 lg:gap-20">
+        <div className={`w-full lg:w-[1080px] flex flex-col gap-12 md:gap-16 lg:gap-20 transition-all duration-300 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
           {/* Quote */}
           <div className="w-full">
-            <p className="text-[#2A167F] text-[20px] md:text-[28px] lg:text-[36px] font-normal font-['Aleo'] italic leading-[32px] md:leading-[42px] lg:leading-[50px]">
+            <p className="text-[#2A167F] text-[16px] md:text-[20px] lg:text-[28px] font-normal font-['Aleo'] italic leading-[24px] md:leading-[32px] lg:leading-[40px]">
               {currentTestimonial.quote}
             </p>
           </div>
@@ -81,8 +90,8 @@ export default function TS2TestimonialSection() {
               </p>
             </div>
 
-            <div className="w-full lg:w-[446px] flex items-center gap-4 md:gap-5 lg:gap-6">
-              <div className="w-px h-[100px] md:h-[120px] lg:h-[124px] bg-[#FCD290] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex-shrink-0"></div>
+            <div className="w-full lg:w-[446px] flex items-stretch gap-4 md:gap-5 lg:gap-6">
+              <div className="w-px bg-[#FCD290] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex-shrink-0"></div>
               <p className="flex-1 text-white text-[18px] md:text-[20px] lg:text-[24px] font-medium font-['Manrope'] leading-[24px] lg:leading-[31.2px]">
                 {currentTestimonial.orgDescription}
               </p>

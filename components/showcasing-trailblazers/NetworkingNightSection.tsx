@@ -1,39 +1,32 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function NetworkingNightSection() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const [isActive, setIsActive] = useState(false);
+
+  const images = [
+    { src: "/showcasing-trailblazers/networking1.png", alt: "Networking night 1" },
+    { src: "/showcasing-trailblazers/networking2.png", alt: "Networking night 2" },
+    { src: "/showcasing-trailblazers/networking3.png", alt: "Networking night 3" },
+    { src: "/showcasing-trailblazers/networking4.png", alt: "Networking night 4" },
+    { src: "/showcasing-trailblazers/networking5.png", alt: "Networking night 5" },
+    { src: "/showcasing-trailblazers/networking6.png", alt: "Networking night 6" },
+  ];
 
   useEffect(() => {
     const section = sectionRef.current;
-    const container = scrollContainerRef.current;
-    if (!section || !container) return;
+    if (!section) return;
 
-    const handleScroll = () => {
-      const sectionRect = section.getBoundingClientRect();
-      const sectionTop = sectionRect.top;
-      const sectionHeight = sectionRect.height;
-      const windowHeight = window.innerHeight;
-      
-      // Calculate scroll progress through this section
-      // Start when section enters viewport, end when it leaves
-      const scrollStart = windowHeight;
-      const scrollEnd = -sectionHeight;
-      const scrollRange = scrollStart - scrollEnd;
-      const scrollProgress = (scrollStart - sectionTop) / scrollRange;
-      
-      // Clamp between 0 and 1
-      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
-      
-      // Calculate horizontal scroll distance
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      container.scrollLeft = maxScroll * clampedProgress;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsActive(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
     };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial call
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -53,41 +46,28 @@ export default function NetworkingNightSection() {
 
         {/* Images Section - Scroll-linked */}
         <div className="relative pt-8 md:pt-12 lg:pt-[50px] pb-12 md:pb-16 lg:pb-[80px] pl-4 md:pl-6 lg:pl-[25px]">
-          <div 
-            ref={scrollContainerRef}
-            className="overflow-x-hidden scrollbar-hide"
-          >
-            <div className="flex gap-3 md:gap-[13px] pb-4">
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/networking1.png" 
-                alt="Networking night 1"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/networking2.png" 
-                alt="Networking night 2"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/networking3.png" 
-                alt="Networking night 3"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/networking4.png" 
-                alt="Networking night 4"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/networking5.png" 
-                alt="Networking night 5"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/networking6.png" 
-                alt="Networking night 6"
-              />
+          <div className="overflow-x-hidden scrollbar-hide">
+            <div
+              className="flex w-max gap-3 md:gap-[13px] pb-4 marquee-track"
+              style={{ animationPlayState: isActive ? "running" : "paused" }}
+            >
+              {images.map((image) => (
+                <img 
+                  key={image.src}
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  src={image.src}
+                  alt={image.alt}
+                />
+              ))}
+              {images.map((image) => (
+                <img 
+                  key={`${image.src}-duplicate`}
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  src={image.src}
+                  alt=""
+                  aria-hidden="true"
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -116,6 +96,21 @@ export default function NetworkingNightSection() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .marquee-track {
+          animation: marquee 36s linear infinite;
+          will-change: transform;
+        }
+
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   )
 }

@@ -8,12 +8,12 @@ export default function LeftSidebar() {
       {/* Main Heading */}
       <div className="absolute left-4 md:left-8 top-24 md:top-32 right-4 md:right-8">
         <h1 className="font-manrope text-2xl md:text-4xl font-normal leading-tight md:leading-[39.6px] text-[#9B2683]">
-          Reimagining the Future of Social Enterprise
+          Reimagining the <br /> Future of Social<br/> Enterprise
         </h1>
       </div>
 
       {/* Sidebar Navigation */}
-      <div className="absolute left-4 md:left-8 top-64 md:top-[325px]">
+      <div className="absolute left-4 md:left-8 top-64 md:top-[300px]">
         <SidebarNavigation 
           items={[
             { label: "SE Landscape Overview", isActive: true, link: "#se-landscape" },

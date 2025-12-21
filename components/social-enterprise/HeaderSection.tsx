@@ -2,7 +2,7 @@ export default function HeaderSection() {
   return (
     <div className="mb-8 md:mb-12">
       <div>
-        <div className="mb-4 text-lg md:text-xl font-semibold text-[#A374FF]">OVERVIEW</div>
+        <div className="mb-4 text-lg md:text-xl font-semibold text-white">OVERVIEW</div>
         <h2 className="mb-4 md:mb-6 font-aleo text-2xl md:text-[36px] font-medium leading-tight md:leading-[58px] text-[#9B2683]">
           The SE Landscape
         </h2>

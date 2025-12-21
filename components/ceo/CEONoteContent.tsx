@@ -5,7 +5,6 @@ import LeadingWithImpactSection from "@/components/ceo/LeadingWithImpactSection"
 import VentureBuildingSection from "@/components/ceo/VentureBuildingSection"
 import CapacityBuildingSection from "@/components/ceo/CapacityBuildingSection"
 import ShowcasingSection from "@/components/ceo/ShowcasingSection"
-import AdvocacyPartnershipsSection from "@/components/ceo/AdvocacyPartnershipsSection"
 
 // Animation removed as per request
 
@@ -48,9 +47,6 @@ export default function CEONoteContent() {
 
       {/* Showcasing Section */}
       <ShowcasingSection />
-
-      {/* Advocacy and Partnerships Section */}
-      <AdvocacyPartnershipsSection />
     </div>
   )
 }

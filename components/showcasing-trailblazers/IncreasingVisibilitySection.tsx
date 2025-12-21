@@ -7,8 +7,8 @@ export default function IncreasingVisibilitySection() {
       {/* Right Content */}
       <div>
         {/* Section Header */}
-        <div className="mb-6 md:mb-8 lg:mb-[20px]">
-          <div className="text-[#FCD290] text-lg md:text-[20px] font-semibold font-['Manrope'] leading-5 mb-2 lg:mb-[8px]">
+        <div className="mb-6 md:mb-8 lg:mb-[35px]">
+          <div className="text-[#FCD290] text-lg md:text-[20px] font-semibold font-['Manrope'] leading-5 mb-2 lg:mb-[25px]">
             CONNECTING THE ECOSYSTEM
           </div>
           <h2 className="text-white text-2xl md:text-3xl lg:text-[36px] font-medium font-['Aleo'] leading-tight md:leading-[46px] max-w-full lg:max-w-[787px]">
@@ -38,7 +38,7 @@ export default function IncreasingVisibilitySection() {
           {/* Honorees Grid - Row 1 */}
           <div className="flex flex-col md:flex-row gap-4 md:gap-[19px] mb-4 md:mb-[19px]">
             {/* Honoree 1 - Sherman Ho */}
-            <div className="flex gap-4 md:gap-[19px] items-start">
+            <div className="flex gap-4 md:gap-[19px] items-center">
               <img 
                 className="w-[120px] md:w-[180px] h-[120px] md:h-[180px] rounded-full object-cover flex-shrink-0" 
                 src="/showcasing-trailblazers/founder1.png" 
@@ -58,7 +58,7 @@ export default function IncreasingVisibilitySection() {
             </div>
 
             {/* Honoree 2 - Mint Lim */}
-            <div className="flex gap-4 md:gap-[19px] items-start">
+            <div className="flex gap-4 md:gap-[19px] items-center">
               <img 
                 className="w-[120px] md:w-[180px] h-[120px] md:h-[180px] rounded-full object-cover flex-shrink-0" 
                 src="/showcasing-trailblazers/founder2.png" 
@@ -81,7 +81,7 @@ export default function IncreasingVisibilitySection() {
           {/* Honorees Grid - Row 2 */}
           <div className="flex flex-col md:flex-row gap-4 md:gap-[19px] mb-4 md:mb-[19px]">
             {/* Honoree 3 - Beatrice Teo */}
-            <div className="flex gap-4 md:gap-[19px] items-start">
+            <div className="flex gap-4 md:gap-[19px] items-center">
               <img 
                 className="w-[120px] md:w-[180px] h-[120px] md:h-[180px] rounded-full object-cover flex-shrink-0" 
                 src="/showcasing-trailblazers/founder3.png" 
@@ -101,7 +101,7 @@ export default function IncreasingVisibilitySection() {
             </div>
 
             {/* Honoree 4 - Anders Tan */}
-            <div className="flex gap-4 md:gap-[19px] items-start">
+            <div className="flex gap-4 md:gap-[19px] items-center">
               <img 
                 className="w-[120px] md:w-[180px] h-[120px] md:h-[180px] rounded-full object-cover flex-shrink-0" 
                 src="/showcasing-trailblazers/founder4.png" 
@@ -138,34 +138,28 @@ export default function IncreasingVisibilitySection() {
           </p>
 
           {/* Layered Images Section */}
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-10 lg:mb-12">
-            {/* Images Container with Layered Effect */}
-            <div className="relative w-full lg:w-auto lg:pb-[120px]">
-              {/* Front Image */}
-              <div className="relative z-10">
-          <img 
-            className="w-full lg:w-[607px] h-auto lg:h-[365px] rounded-[20px] md:rounded-[25px] lg:rounded-[30px] object-cover" 
-            src="/showcasing-trailblazers/event6.png" 
-            alt="Singapore Steward Leadership Award Recipients"
-          />
-              </div>
-              
-              {/* Back Image - Positioned Behind and Below */}
-              <div className="relative lg:absolute lg:top-[80px] lg:left-[60px] lg:-z-10 mt-4 lg:mt-0">
-          <img 
-            className="w-full lg:w-[607px] h-auto lg:h-[365px] rounded-[20px] md:rounded-[25px] lg:rounded-[30px] object-cover lg:opacity-90" 
-            src="/showcasing-trailblazers/event7.png" 
-            alt="Singapore Steward Leadership Event"
-          />
-              </div>
-            </div>
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 lg:gap-10 mb-10 ml-10">
+  
+  {/* Image */}
+  <img 
+    className="w-full md:w-1/2 lg:w-[1007px] h-auto rounded-[20px] md:rounded-[30px] object-cover" 
+    src="/showcasing-trailblazers/event6.svg" 
+    alt="Singapore Steward Leadership Award Recipients"
+  />
 
-            {/* Caption Text */}
-            <div className="text-white text-sm md:text-[15px] lg:text-[16px] font-light font-['Inter'] leading-relaxed lg:mt-0">
-              <p className="mb-1">Left: Lynette Tan, Founder & CEO, The Radiant Spectrum</p>
-              <p>Right: Serene Seng, Co-Founder & CEO, D2L.sg</p>
-            </div>
-          </div>
+  {/* Caption Text (Right side on desktop) */}
+  <div className="text-white text-sm md:text-base font-light font-['Inter'] leading-relaxed md:pt-4 mt-20 ">
+    <p className="mb-1 -ml-40">
+      <span className="font-medium">Left:</span> Dr Wesley Joon-Wie Tann <br/>Cofounder, The Radiant Spectrum
+    </p>
+    <br></br  >
+    <p className="mb-1 -ml-40">
+      <span className="font-medium">Right:</span> Ms Lin QingHui <br/> Founder D2L.sg Additional Word Launch
+    </p>
+  </div>
+
+</div>
+      
         </div>
 
         {/* Sustainable Philanthropy Framework Section */}
@@ -179,7 +173,7 @@ export default function IncreasingVisibilitySection() {
           </p>
 
           <img 
-            className="w-full lg:w-[752px] h-auto lg:h-[521px] rounded-[15px] md:rounded-[20px] object-cover" 
+            className="w-full lg:w-[1052px] h-auto lg:h-[521px] rounded-[15px] md:rounded-[20px] object-cover" 
             src="/showcasing-trailblazers/event5.png" 
             alt="Sustainable Philanthropy Framework Launch"
           />

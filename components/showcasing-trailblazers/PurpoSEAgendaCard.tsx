@@ -1,31 +1,35 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function PurpoSEAgendaCard() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const [isActive, setIsActive] = useState(false);
+
+  const images = [
+    { src: "/showcasing-trailblazers/purpose-agenda1.jpg", alt: "PurpoSE Agenda 1" },
+    { src: "/showcasing-trailblazers/purpose-agenda3.png", alt: "PurpoSE Agenda 3" },
+    { src: "/showcasing-trailblazers/purpose-agenda4.png", alt: "PurpoSE Agenda 4" },
+    { src: "/showcasing-trailblazers/purpose-agenda5.png", alt: "PurpoSE Agenda 5" },
+    { src: "/showcasing-trailblazers/purpose-agenda6.png", alt: "PurpoSE Agenda 6" },
+    { src: "/showcasing-trailblazers/purpose-agenda7.png", alt: "PurpoSE Agenda 7" },
+    { src: "/showcasing-trailblazers/purpose-agenda8.png", alt: "PurpoSE Agenda 8" },
+    { src: "/showcasing-trailblazers/purpose-agenda9.png", alt: "PurpoSE Agenda 9" },
+    { src: "/showcasing-trailblazers/purpose-agenda10.png", alt: "PurpoSE Agenda 10" },
+    { src: "/showcasing-trailblazers/purpose-agenda11.png", alt: "PurpoSE Agenda 11" },
+    { src: "/showcasing-trailblazers/purpose-agenda12.png", alt: "PurpoSE Agenda 12" },
+  ];
 
   useEffect(() => {
     const section = sectionRef.current;
-    const container = scrollContainerRef.current;
-    if (!section || !container) return;
+    if (!section) return;
 
-    const handleScroll = () => {
-      const sectionRect = section.getBoundingClientRect();
-      const sectionTop = sectionRect.top;
-      const sectionHeight = sectionRect.height;
-      const windowHeight = window.innerHeight;
-      const scrollStart = windowHeight;
-      const scrollEnd = -sectionHeight;
-      const scrollRange = scrollStart - scrollEnd;
-      const scrollProgress = (scrollStart - sectionTop) / scrollRange;
-      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      container.scrollLeft = maxScroll * clampedProgress;
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsActive(entry.isIntersecting),
+      { threshold: 0.2 }
+    );
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    observer.observe(section);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -45,64 +49,28 @@ export default function PurpoSEAgendaCard() {
 
         {/* Images Section - Scrollable */}
         <div className="relative pt-4 md:pt-6 lg:pt-[23px] pb-12 md:pb-16 lg:pb-[85px] pl-4 md:pl-6 lg:pl-[25px]">
-          <div ref={scrollContainerRef} className="overflow-x-hidden scrollbar-hide">
-            <div className="flex gap-3 md:gap-[14px] pb-4">
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda1.jpg" 
-                alt="PurpoSE Agenda 1"
-              />
-            
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda3.png" 
-                alt="PurpoSE Agenda 3"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda4.png" 
-                alt="PurpoSE Agenda 4"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda5.png" 
-                alt="PurpoSE Agenda 5"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda6.png" 
-                alt="PurpoSE Agenda 6"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda7.png" 
-                alt="PurpoSE Agenda 7"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda8.png" 
-                alt="PurpoSE Agenda 8"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda9.png" 
-                alt="PurpoSE Agenda 9"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda10.png" 
-                alt="PurpoSE Agenda 10"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda11.png" 
-                alt="PurpoSE Agenda 11"
-              />
-              <img 
-                className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
-                src="/showcasing-trailblazers/purpose-agenda12.png" 
-                alt="PurpoSE Agenda 12"
-              />
+          <div className="overflow-x-hidden scrollbar-hide">
+            <div
+              className="flex w-max gap-3 md:gap-[14px] pb-4 purpose-marquee"
+              style={{ animationPlayState: isActive ? "running" : "paused" }}
+            >
+              {images.map((image) => (
+                <img 
+                  key={image.src}
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  src={image.src}
+                  alt={image.alt}
+                />
+              ))}
+              {images.map((image) => (
+                <img 
+                  key={`${image.src}-duplicate`}
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  src={image.src}
+                  alt=""
+                  aria-hidden="true"
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -161,6 +129,21 @@ export default function PurpoSEAgendaCard() {
           </div>
         </div>
       </div>
+      <style jsx>{`
+        .purpose-marquee {
+          animation: purposeMarquee 48s linear infinite;
+          will-change: transform;
+        }
+
+        @keyframes purposeMarquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   )
 }

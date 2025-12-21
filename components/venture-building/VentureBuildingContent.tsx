@@ -17,13 +17,7 @@ export default function VentureBuildingContent() {
       <EnergiSETestimonialSection />
       <TS2StatsSection />
       <TS2TestimonialSection />
-      
-      {/* Footer Image */}
-      <img 
-        style={{width: '100%', height: '10%'}} 
-        src="/venture-building/footer.png" 
-        alt="Footer" 
-      />
+
     </div>
   )
 }

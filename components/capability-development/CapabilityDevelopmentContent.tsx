@@ -1,15 +1,32 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 
 export default function CapabilityDevelopmentContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const sectionRef = useRef<HTMLDivElement>(null)
+  const [isHovered, setIsHovered] = useState(false)
   
   const galleryImages = [
     "/venture-building/t1.jpg",
     "/venture-building/t2.jpg",
     "/venture-building/t3.jpg",
+  ]
+
+  const testimonials = [
+    {
+      quote: "The workshop provided us with the ability to evaluate and align our goals with opportunities. The service blueprint, with its focus on processes, resources, and and stakeholder perspectives, ensures smoother operations and better outcomes. It has enhanced the desired social impact for our beneficiaries, equipping them with essential skills for independence and a successful transition into adulthood.",
+      name: "Ms Angie Tan",
+      title: "Vice-Principal, Genesis School for Special Education Pte Ltd",
+      description: "Genesis School is a child centered private school that provides specialised programmes and interventions for students with special needs."
+    },
+    {
+      quote: "Attending the Grow Impact Workshop has been immensely valuable. It helped us evaluate and rethink our business model, identify capabilities through the 4 Levers of Change, and map out our next steps for growth. The frameworks shared, such as Business Model Innovation, Service Blueprint, and real-world case studies, opened up new avenues for discovery and opportunity. The post-workshop consultation was especially helpful, offering personalised guidance tailored to our context. We're grateful for the clarity it brought to our business model, resource planning, and capability building. Truly insightful and empowering!",
+      name: "Ms Yi Juan Low",
+      title: "Executive Director, Architects of Life",
+      description: "Architects of Life is a Social Enterprise that specialises in developing the human potential of youth at risks/ex-offenders through outreach, developmental and intervention programmes."
+    }
   ]
   
   const nextSlide = () => {
@@ -20,7 +37,24 @@ export default function CapabilityDevelopmentContent() {
     setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
   }
 
-  // Animation removed as per request
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
+  }
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  }
+
+  // Auto-scroll effect for gallery
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        setCurrentSlide((prev) => (prev + 1) % galleryImages.length)
+      }
+    }, 3000) // Change slide every 3 seconds
+    
+    return () => clearInterval(interval)
+  }, [isHovered, galleryImages.length])
 
   return (
     <div ref={sectionRef} className="min-h-screen w-full relative" id="capability-development">
@@ -75,10 +109,10 @@ export default function CapabilityDevelopmentContent() {
       {/* Partnering with IHLs Section */}
       <div 
         className="relative w-full"
-        style={{ background: 'linear-gradient(180deg, rgba(51, 17, 108, 0.80) 0%, #A564F7 16%)' }}
+        style={{ background: 'linear-gradient(180deg, rgba(51, 17, 108, 0.80) 0%, #A564F7 16%)',overflow: 'hidden' }}
       >
         {/* IHLs Content */}
-        <div className="w-full flex justify-center py-16">
+        <div className="w-full flex justify-center py-6 mt-20 md:mt-32">
           <div className="w-full max-w-[1200px] px-6">
             <div className="flex flex-col md:flex-row gap-12">
               {/* Left - Title */}
@@ -130,9 +164,9 @@ export default function CapabilityDevelopmentContent() {
         </div>
         
         {/* IHLs Image */}
-        <div className="w-full">
+        <div className="w-full mt-8">
           <img 
-            src="/development/hero2.jpg" 
+            src="/development/hero2.svg" 
             alt="Partnering with IHLs" 
             style={{width: '100%', height: '100%'}}
           />
@@ -181,18 +215,19 @@ export default function CapabilityDevelopmentContent() {
               <div 
                 className="flex flex-col items-start px-6 py-8"
                 style={{ 
-                  borderLeft: '1px dashed #FCD290'
+                  borderLeft: '1px solid #FCD290'
                 }}
               >
                 <img src="/development/icon-1.png" alt="Icon 1" style={{width: '100%', height: '100%', maxWidth: '120px', maxHeight: '120px'}} />
                 <div 
-                  className="mt-auto pt-12"
+                  className="mt-12"
                   style={{
                     color: 'white',
                     fontSize: 18,
                     fontFamily: 'Manrope',
                     fontWeight: '500',
-                    lineHeight: '23.40px'
+                    lineHeight: '23.40px',
+                    minHeight: '70px'
                   }}
                 >
                   Re-examined their value propositions while balancing impact with profitability
@@ -208,13 +243,14 @@ export default function CapabilityDevelopmentContent() {
               >
                 <img src="/development/icon-2.png" alt="Icon 2" style={{width: '100%', height: '100%', maxWidth: '120px', maxHeight: '120px'}} />
                 <div 
-                  className="mt-auto pt-12"
+                  className="mt-12"
                   style={{
                     color: 'white',
                     fontSize: 18,
                     fontFamily: 'Manrope',
                     fontWeight: '500',
-                    lineHeight: '23.40px'
+                    lineHeight: '23.40px',
+                    minHeight: '70px'
                   }}
                 >
                   Identified gaps and opportunities for innovation
@@ -230,13 +266,14 @@ export default function CapabilityDevelopmentContent() {
               >
                 <img src="/development/icon-3.png" alt="Icon 3" style={{width: '100%', height: '100%', maxWidth: '120px', maxHeight: '120px'}} />
                 <div 
-                  className="mt-auto pt-12"
+                  className="mt-12"
                   style={{
                     color: 'white',
                     fontSize: 18,
                     fontFamily: 'Manrope',
                     fontWeight: '500',
-                    lineHeight: '23.40px'
+                    lineHeight: '23.40px',
+                    minHeight: '70px'
                   }}
                 >
                   Developed service blueprints to map processes, resources, and stakeholder interactions
@@ -252,13 +289,14 @@ export default function CapabilityDevelopmentContent() {
               >
                 <img src="/development/icon-4.png" alt="Icon 4" style={{width: '100%', height: '100%', maxWidth: '120px', maxHeight: '120px'}} />
                 <div 
-                  className="mt-auto pt-12"
+                  className="mt-12"
                   style={{
                     color: 'white',
                     fontSize: 18,
                     fontFamily: 'Manrope',
                     fontWeight: '500',
-                    lineHeight: '23.40px'
+                    lineHeight: '23.40px',
+                    minHeight: '70px'
                   }}
                 >
                   Crafted actionable strategies to advance both economic sustainability and social outcomes
@@ -270,42 +308,45 @@ export default function CapabilityDevelopmentContent() {
 
         {/* Image Gallery/Carousel Section */}
         <div 
-          className="w-full py-20"
+          className="w-full py-16"
           style={{ 
-            opacity: 0.80, 
             background: 'linear-gradient(180deg, #512691 57%, #A374FF 100%)' 
           }}
         >
-          <div className="max-w-[1448px] mx-auto px-6 flex items-center justify-center gap-8 md:gap-16">
+          <div 
+            className="max-w-[1200px] mx-auto px-6 flex items-center justify-center gap-8 md:gap-12"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {/* Left Arrow */}
             <button 
               onClick={prevSlide}
-              className="flex-shrink-0 w-[40px] h-[40px] md:w-[73px] md:h-[72px] flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="flex-shrink-0 w-[40px] h-[40px] md:w-[60px] md:h-[60px] flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label="Previous image"
             >
-              <svg width="73" height="72" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23.8007 33H60.833V39H23.8007L40.834 55.8L36.4997 60L12.1663 36L36.4997 12L40.834 16.2L23.8007 33Z" fill="#FEF7FF"/>
+              <svg width="60" height="60" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.8007 33H60.833V39H23.8007L40.834 55.8L36.4997 60L12.1663 36L36.4997 12L40.834 16.2L23.8007 33Z" fill="#FEF7FF"/>
               </svg>
             </button>
             
             {/* Center Image */}
-            <div className="flex-1 max-w-[781px] flex justify-center">
+            <div className="flex-1 max-w-[600px] flex justify-center">
               <img 
-          src={galleryImages[currentSlide]} 
-          alt={`Gallery image ${currentSlide + 1}`}
-          className="w-full max-w-[781px] rounded-[20px] shadow-2xl transition-all duration-500"
-          style={{ aspectRatio: '781/582', maxHeight: '60vw', objectFit: 'cover' }}
+                src={galleryImages[currentSlide]} 
+                alt={`Gallery image ${currentSlide + 1}`}
+                className="w-full rounded-[20px] shadow-2xl transition-all duration-500"
+                style={{ maxHeight: '450px', objectFit: 'cover' }}
               />
             </div>
             
             {/* Right Arrow */}
             <button 
               onClick={nextSlide}
-              className="flex-shrink-0 w-[40px] h-[40px] md:w-[73px] md:h-[72px] flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="flex-shrink-0 w-[40px] h-[40px] md:w-[60px] md:h-[60px] flex items-center justify-center hover:opacity-80 transition-opacity"
               aria-label="Next image"
             >
-              <svg width="73" height="72" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M49.1983 39H12.166V33H49.1983L32.165 16.2L36.4993 12L60.8327 36L36.4993 60L32.165 55.8L49.1983 39Z" fill="#FCD290"/>
+              <svg width="60" height="60" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M49.1983 39H12.166V33H49.1983L32.165 16.2L36.4993 12L60.8327 36L36.4993 60L32.165 55.8L49.1983 39Z" fill="#FCD290"/>
               </svg>
             </button>
           </div>
@@ -314,24 +355,15 @@ export default function CapabilityDevelopmentContent() {
           <div className="flex justify-center gap-2 mt-8">
             {galleryImages.map((_, index) => (
               <button
-          key={index}
-          onClick={() => setCurrentSlide(index)}
-          className={`w-3 h-3 rounded-full transition-all ${
-            currentSlide === index ? 'bg-[#FCD290] w-8' : 'bg-white/50'
-          }`}
-          aria-label={`Go to slide ${index + 1}`}
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  currentSlide === index ? 'bg-[#FCD290] w-8' : 'bg-white/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
-          <style jsx>{`
-            @media (max-width: 768px) {
-              img {
-          max-width: 100vw !important;
-          max-height: 55vw !important;
-          border-radius: 12px !important;
-              }
-            }
-          `}</style>
         </div>
 
         {/* Aligning Objectives Section */}
@@ -456,11 +488,15 @@ export default function CapabilityDevelopmentContent() {
         style={{ background: 'linear-gradient(180deg, white 15%, #A374FF 77%, #A374FF 100%)' }}
       >
         {/* Left Arrow Icon */}
-        <div className="hidden md:flex w-[73px] h-[72px] items-center justify-center flex-shrink-0">
+        <button
+          onClick={prevTestimonial}
+          className="hidden md:flex w-[73px] h-[72px] items-center justify-center flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
+          aria-label="Previous testimonial"
+        >
           <svg width="73" height="72" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M23.8007 33H60.833V39H23.8007L40.834 55.8L36.4997 60L12.1663 36L36.4997 12L40.834 16.2L23.8007 33Z" fill="#FEF7FF"/>
           </svg>
-        </div>
+        </button>
         
         {/* Content */}
         <div className="flex-1 max-w-[1080px] flex flex-col gap-12 md:gap-20">
@@ -468,7 +504,7 @@ export default function CapabilityDevelopmentContent() {
           <div 
             style={{
               color: '#2A167F',
-              fontSize: 'clamp(20px, 3vw, 34px)',
+              fontSize: 'clamp(16px, 2.5vw, 28px)',
               fontFamily: 'Aleo',
               fontStyle: 'italic',
               fontWeight: '400',
@@ -476,7 +512,7 @@ export default function CapabilityDevelopmentContent() {
               wordWrap: 'break-word'
             }}
           >
-            The workshop provided us with the ability to evaluate and align our goals with opportunities. The service blueprint, with its focus on processes, resources, and and stakeholder perspectives, ensures smoother operations and better outcomes. It has enhanced the desired social impact for our beneficiaries, equipping them with essential skills for independence and a successful transition into adulthood.
+            {testimonials[currentTestimonial].quote}
           </div>
           
           {/* Author Info */}
@@ -494,7 +530,7 @@ export default function CapabilityDevelopmentContent() {
                   wordWrap: 'break-word'
                 }}
               >
-                Ms Angie Tan
+                {testimonials[currentTestimonial].name}
               </div>
               <div 
                 style={{
@@ -507,7 +543,7 @@ export default function CapabilityDevelopmentContent() {
                   wordWrap: 'break-word'
                 }}
               >
-                Vice-Principal, Genesis School for Special Education Pte Ltd
+                {testimonials[currentTestimonial].title}
               </div>
             </div>
             
@@ -531,19 +567,33 @@ export default function CapabilityDevelopmentContent() {
                   wordWrap: 'break-word'
                 }}
               >
-                Genesis School is a child centered private school that provides specialised programmes and interventions for students with special needs.
+                {testimonials[currentTestimonial].description}
               </div>
             </div>
           </div>
         </div>
+
+        
         
         {/* Right Arrow Icon */}
-        <div className="hidden md:flex w-[73px] h-[72px] items-center justify-center flex-shrink-0">
+        <button
+          onClick={nextTestimonial}
+          className="hidden md:flex w-[73px] h-[72px] items-center justify-center flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity"
+          aria-label="Next testimonial"
+        >
           <svg width="73" height="72" viewBox="0 0 73 72" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M49.1983 39H12.166V33H49.1983L32.165 16.2L36.4993 12L60.8327 36L36.4993 60L32.165 55.8L49.1983 39Z" fill="#FCD290"/>
           </svg>
-        </div>
+        </button>
       </div>
+            
+      {/* Footer Image */}
+      <img 
+        style={{width: '100%', height: '10%'}} 
+        src="/venture-building/footer.png" 
+        alt="Footer" 
+      />
     </div>
+    
   )
 }

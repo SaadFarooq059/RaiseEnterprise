@@ -21,13 +21,22 @@ const testimonials = [
 
 export default function EnergiSETestimonialSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1))
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1))
+      setIsTransitioning(false)
+    }, 300)
   }
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1))
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1))
+      setIsTransitioning(false)
+    }, 300)
   }
 
   const currentTestimonial = testimonials[currentIndex]
@@ -49,9 +58,9 @@ export default function EnergiSETestimonialSection() {
           </svg>
         </button>
 
-        <div className="w-full lg:w-[1080px] flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-20">
+        <div className={`w-full lg:w-[1080px] flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-20 transition-all duration-300 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
           {/* Quote and Image */}
-          <div className="w-full flex flex-col lg:flex-row items-start gap-5 sm:gap-6 md:gap-8 lg:gap-10">
+          <div className="w-full flex flex-col lg:flex-row items-center gap-5 sm:gap-6 md:gap-8 lg:gap-10">
             <p className="flex-1 text-[#2A167F] text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] font-normal font-['Aleo'] italic leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[28px] whitespace-pre-line">
               {currentTestimonial.quote}
             </p>
@@ -73,8 +82,8 @@ export default function EnergiSETestimonialSection() {
               </p>
             </div>
 
-            <div className="w-full lg:w-[446px] flex items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
-              <div className="w-px h-[120px] sm:h-[150px] md:h-[180px] lg:h-[217px] bg-[#FCD290] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex-shrink-0"></div>
+            <div className="w-full lg:w-[446px] flex items-stretch gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+              <div className="w-px bg-[#FCD290] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex-shrink-0"></div>
               <p className="flex-1 text-white text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-medium font-['Manrope'] leading-[22px] sm:leading-[24px] lg:leading-[31.2px]">
                 {currentTestimonial.description}
               </p>
@@ -93,7 +102,7 @@ export default function EnergiSETestimonialSection() {
               </svg>
             </button>
             <button 
-              onClick={goToNext}
+              onClick={goToNext} 
               className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] cursor-pointer transition-all group hover:scale-110"
               aria-label="Next testimonial"
             >

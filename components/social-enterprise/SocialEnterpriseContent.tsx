@@ -1,6 +1,5 @@
 "use client"
 
-// import { useEffect, useState, useRef } from "react"
 import LeftSidebar from "@/components/social-enterprise/LeftSidebar"
 import HeaderSection from "@/components/social-enterprise/HeaderSection"
 import PurpleCardsSection from "@/components/social-enterprise/PurpleCardsSection"
@@ -16,12 +15,15 @@ import MembershipCategoriesSection from "@/components/social-enterprise/Membersh
 import ImpactAreasSection from "@/components/social-enterprise/ImpactAreasSection"
 import MembersPortalSection from "@/components/social-enterprise/MembersPortalSection"
 import SocialImpactReportSection from "@/components/social-enterprise/SocialImpactReportSection"
-
-// Animation removed as per request
+import HeroSectionSocial from "./herosectionsocial"
 
 export default function SocialEnterpriseContent() {
   return (
+    <>
+       <HeroSectionSocial />
     <div className="relative min-h-screen bg-white" id="social-enterprise">
+   
+      
       {/* Gradient Header */}
       <div 
         className="absolute top-0 left-0 right-0 h-64 z-0"
@@ -31,58 +33,65 @@ export default function SocialEnterpriseContent() {
       <div className="flex flex-col md:flex-row relative z-10">
         {/* Left Side - Blank/White with Logo and Navigation */}
         <LeftSidebar />
-
+        
         {/* Right Side - Report Content */}
         <div className="w-full md:w-2/3 min-h-screen overflow-hidden ml-0 md:ml-auto">
           {/* Main Content */}
-          <div className="max-w-full px-6 md:px-12 pt-24 md:pt-32">
+          <div className="max-w-full pl-8 pr-6 md:pl-16 md:pr-12 lg:pl-20 lg:pr-16 pt-24 md:pt-32">
             <div id="se-landscape">
               <HeaderSection />
             </div>
             
             <PurpleCardsSection />
-
-            <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
-
+            
+            <div className="my-6 md:my-8 h-px bg-[#A564F7]" />
+            
             <GrowthSection />
-
+            
             <MembershipChartsSection />
-
+            
             <MembershipCardsSection />
             
-            <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
-
+            <div className="my-6 md:my-8 h-px bg-[#A564F7]" />
+            
             <div id="membership-framework">
               <CoreAttributesSection />
             </div>
-
-            <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
-
+            
+            
+            
             <div id="membership-categories">
               <MembershipCategoriesSection />
             </div>
-
-            <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
-
+            
+          
+            
             <div id="impact-areas">
               <ImpactAreasSection />
             </div>
-
-            <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
-
+       
             <div id="membership-portal">
               <MembersPortalSection />
             </div>
-
-            <div className="mb-8 md:mb-12 h-px bg-[#A564F7]" />
-          </div>
-
-          {/* Footer Section - Outside padding container */}
+            
+               {/* Footer Section - Outside padding container */}
           <div id="social-impact-report">
             <SocialImpactReportSection />
           </div>
+          </div>
+          
+       
         </div>
       </div>
+
+  <div className="w-full -mt-60 md:-mt-72 lg:-mt-80 xl:-mt-56">
+          <img 
+            src="/social/herosocial.png" 
+            alt="raiSE Social Enterprise Members Portal"
+            className="w-full h-auto block" 
+          />
+        </div>
     </div>
+    </>
   )
 }
