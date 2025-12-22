@@ -29,34 +29,29 @@ export default function IWD2025Content() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="grid grid-cols-1 lg:grid-cols-[415px_1fr] gap-0 lg:gap-[90px]">
-      {/* Left Sidebar - Empty space for SidebarNav */}
-      <div className="hidden lg:block"></div>
+    <div ref={sectionRef} className="w-full pl-4 pr-4 md:pl-6 md:pr-6 lg:pl-0 lg:pr-[25px]">
+      {/* First Paragraph */}
+      <div className="max-w-full lg:max-w-[806px] mb-8 md:mb-12 lg:mb-[60px]">
+        <p className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
+          Our Assistant CEO, Subashini Balakrishnan, joined the main panel to share strategies on overcoming self-doubt, the importance of community, and how Social Enterprises are at the forefront of driving inclusive work for women. <br/><br/>
+          A Social Enterprise Breakout Track on "Collaboration over Competition" moderated by our Director of Strategic Initiatives, Wei Shan Koh, attracted 125 participants and featured:
+        </p>
+      </div>
 
-      {/* Right Content */}
-      <div>
-        {/* First Paragraph */}
-        <div className="max-w-full lg:max-w-[806px] mb-8 md:mb-12 lg:mb-[60px]">
-          <p className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
-            Our Assistant CEO, Subashini Balakrishnan, joined the main panel to share strategies on overcoming self-doubt, the importance of community, and how Social Enterprises are at the forefront of driving inclusive work for women. <br/><br/>
-            A Social Enterprise Breakout Track on "Collaboration over Competition" moderated by our Director of Strategic Initiatives, Wei Shan Koh, attracted 125 participants and featured:
-          </p>
-        </div>
-
-        {/* Image Above Founders */}
-        <div className="mb-8 md:mb-12 lg:mb-[60px]">
-          <img 
-            className="w-full lg:w-[784px] h-auto lg:h-[357px] rounded-[15px] md:rounded-[20px] object-cover" 
-            src="/showcasing-trailblazers/event1.jpg" 
-            alt="IWD Event"
-          />
-        </div>
-           <div className="max-w-full lg:max-w-[806px] mb-8 md:mb-12 -mt-10 lg:mb-[60px]">
-          <p className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
-            Our Assistant CEO, Subashini Balakrishnan, joined the main panel to share strategies on overcoming self-doubt, the importance of community, and how Social Enterprises are at the forefront of driving inclusive work for women. <br/><br/>
-            A Social Enterprise Breakout Track on "Collaboration over Competition" moderated by our Director of Strategic Initiatives, Wei Shan Koh, attracted 125 participants and featured:
-          </p>
-        </div>
+      {/* Image Above Founders */}
+      <div className="mb-8 md:mb-12 lg:mb-[60px]">
+        <img 
+          className="w-full lg:w-[784px] h-auto lg:h-[357px] rounded-[15px] md:rounded-[20px] object-cover" 
+          src="/showcasing-trailblazers/event1.jpg" 
+          alt="IWD Event"
+        />
+      </div>
+      <div className="max-w-full lg:max-w-[806px] mb-8 md:mb-12 -mt-10 lg:mb-[60px]">
+        <p className="text-white text-base md:text-lg lg:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
+          Our Assistant CEO, Subashini Balakrishnan, joined the main panel to share strategies on overcoming self-doubt, the importance of community, and how Social Enterprises are at the forefront of driving inclusive work for women. <br/><br/>
+          A Social Enterprise Breakout Track on "Collaboration over Competition" moderated by our Director of Strategic Initiatives, Wei Shan Koh, attracted 125 participants and featured:
+        </p>
+      </div>
 
 
         {/* Featured Founders - Row 1 */}
@@ -158,13 +153,13 @@ export default function IWD2025Content() {
         </div>
 
         {/* Image 1 */}
-        <div className="mb-6 md:mb-8 lg:mb-[47px]">
-          <img 
-            className="w-full lg:w-[784px] h-auto lg:h-[357px] rounded-[15px] md:rounded-[20px] object-cover" 
-            src="/showcasing-trailblazers/event.jpg" 
-            alt="IWD Event 1"
-          />
-        </div>
+         <div className="mb-6 md:mb-8 lg:mb-[47px]">
+      <img 
+        className="w-full max-w-full lg:max-w-[784px] h-auto aspect-[784/357] rounded-[15px] md:rounded-[20px] object-cover" 
+        src="/showcasing-trailblazers/event.png" 
+        alt="IWD Event 1"
+      />
+    </div>
 
         {/* Second Paragraph */}
         <div className="max-w-full lg:max-w-[791px] mb-8 md:mb-12 lg:mb-[67px]">
@@ -173,8 +168,6 @@ export default function IWD2025Content() {
           </p>
         </div>
 
-       
-      </div>
     </div>
   )
 }

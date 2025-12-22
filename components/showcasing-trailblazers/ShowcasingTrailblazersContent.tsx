@@ -40,12 +40,16 @@ export default function ShowcasingTrailblazersContent() {
       className="relative w-full overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #7479ED 0%, #512691 12%)' }}
     >
-      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">
-        <PurpoSEAgendaHeader />
+      <div className="relative flex justify-end pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">
+        <div className="w-full max-w-[1140px]">
+          <PurpoSEAgendaHeader />
+        </div>
       </div>
       <PurpoSEAgendaCard />
-      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
-        <PurpoSEAgendaContent />
+      <div className="relative flex justify-end pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
+        <div className="w-full max-w-[1140px]">
+          <PurpoSEAgendaContent />
+        </div>
       </div>
     </section>
 
@@ -55,12 +59,16 @@ export default function ShowcasingTrailblazersContent() {
       className="relative w-full overflow-hidden -mt-30"
       style={{ background: 'linear-gradient(180deg,  #512691 12%)' }}
     >
-      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">
-        <PurpoSEAgendaHeader1 />
+      <div className="relative flex justify-end pt-12 -mt-5 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">
+        <div className="w-full max-w-[1140px]">
+          <PurpoSEAgendaHeader1 />
+        </div>
       </div>
       <PurpoSEAgendaCard1 />
-      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
-        <PurpoSEAgendaContent1 />
+      <div className="relative flex justify-end pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
+        <div className="w-full max-w-[1140px]">
+          <PurpoSEAgendaContent1 />
+        </div>
       </div>
     </section>
 
@@ -69,12 +77,16 @@ export default function ShowcasingTrailblazersContent() {
       className="relative w-full overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #512691 12%)' }}
     >
-      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 lg:pb-10">
-        <IWD2025Header />
+      <div className="relative flex justify-end pt-12 md:pt-24 lg:pt-32 xl:pt-[150px] pb-6 md:pb-8 -mt-25 lg:pb-10">
+        <div className="w-full max-w-[1140px]">
+          <IWD2025Header />
+        </div>
       </div>
       <IWD2025Card />
-      <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
-        <IWD2025Content />
+      <div className="relative flex justify-end pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
+        <div className="w-full max-w-[1140px]">
+          <IWD2025Content />
+        </div>
       </div>
     </section>
 
@@ -83,8 +95,10 @@ export default function ShowcasingTrailblazersContent() {
         className="relative w-full overflow-hidden"
         style={{ background: 'linear-gradient(180deg, #512691 0%, #5C61DB 8%)' }}
       >
-        <div className="relative px-4 md:px-6 lg:px-12 xl:px-[120px] pt-12 md:pt-24 lg:pt-32 xl:pt-[170px] pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
-          <IncreasingVisibilitySection />
+        <div className="relative flex justify-end pt-12 md:pt-24 lg:pt-32 xl:pt-[170px] -mt-40 pb-12 md:pb-16 lg:pb-20 xl:pb-[100px]">
+          <div className="w-full max-w-[1140px]">
+            <IncreasingVisibilitySection />
+          </div>
         </div>
       </section>
     </div>

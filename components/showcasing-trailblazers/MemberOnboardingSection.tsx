@@ -34,7 +34,7 @@ export default function MemberOnboardingSection() {
             </div>
             
             {/* Images */}
-            <div className="flex flex-col gap-3 sm:gap-4 md:gap-[18px] lg:flex-shrink-0">
+            <div className="flex flex-col gap-3 sm:gap-4 md:gap-[18px] lg:flex-shrink-0 lg:self-start lg:mt-[68px]">
               <img 
                 className="w-full lg:w-[360px] h-auto aspect-[4/3] rounded-2xl lg:rounded-[33px] object-cover" 
                 src="/showcasing-trailblazers/onboarding1.jpg" 

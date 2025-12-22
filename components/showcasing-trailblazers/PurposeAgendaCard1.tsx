@@ -30,7 +30,7 @@ export default function PurpoSEAgendaCard1() {
   return (
     <div ref={sectionRef} className="relative flex justify-end mb-[47px]">
       {/* Content Container - Attached to right */}
-      <div className="relative w-full" style={{ maxWidth: '1340px' }}>
+      <div className="relative w-full" style={{ maxWidth: '1140px' }}>
         {/* Purple Card Background */}
         <div 
           className="absolute inset-0"
@@ -43,7 +43,7 @@ export default function PurpoSEAgendaCard1() {
         ></div>
 
         {/* Images Section - Scrollable */}
-        <div className="relative pt-[23px] pb-[85px] pl-[25px]">
+        <div className="relative pt-4 md:pt-6 lg:pt-[23px] pb-12 md:pb-16 lg:pb-[85px] pl-4 md:pl-6 lg:pl-[25px]">
           <div className="overflow-x-hidden scrollbar-hide">
             <div
               className="flex w-max gap-[14px] pb-4 agenda-marquee"
@@ -52,7 +52,7 @@ export default function PurpoSEAgendaCard1() {
               {images.map((image) => (
                 <img 
                   key={image.src}
-                  className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[570px] h-auto md:h-[300px] lg:h-[380px] rounded-[15px] md:rounded-[20px] object-cover" 
                   src={image.src}
                   alt={image.alt}
                 />
@@ -60,7 +60,7 @@ export default function PurpoSEAgendaCard1() {
               {images.map((image) => (
                 <img 
                   key={`${image.src}-duplicate`}
-                  className="flex-shrink-0 w-[675px] h-[450px] rounded-[20px] object-cover" 
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[570px] h-auto md:h-[300px] lg:h-[380px] rounded-[15px] md:rounded-[20px] object-cover" 
                   src={image.src}
                   alt=""
                   aria-hidden="true"
@@ -71,7 +71,7 @@ export default function PurpoSEAgendaCard1() {
         </div>
 
         {/* Event Snapshot Badge and Stats */}
-        <div className="relative px-[25px] pb-[80px]">
+        <div className="relative px-4 md:px-6 lg:px-[25px] pb-12 md:pb-16 lg:pb-[80px]">
           {/* Badge */}
        <div className="w-[180px] md:w-[204px] h-[40px] md:h-[47px] bg-[#FCD290] rounded-[40px] flex items-center justify-center mb-4 md:mb-6 lg:mb-[24px]">
             <span className="text-[#2A167F] text-sm md:text-[15px] font-semibold font-['Aleo'] leading-[15px]">
@@ -80,9 +80,9 @@ export default function PurpoSEAgendaCard1() {
           </div>
 
           {/* Two Column Layout */}
-          <div className="flex gap-[106px]">
+          <div className="flex gap-[90px]">
             {/* Left - Description */}
-            <div className="max-w-[446px]">
+            <div className="max-w-[380px]">
               <p
               style={{
                 color: 'white',
@@ -98,7 +98,7 @@ export default function PurpoSEAgendaCard1() {
             </div>
 
             {/* Right - Stats */}
-            <div className="flex flex-col gap-[26px] ml-[210px]">
+            <div className="flex flex-col gap-[26px] ml-[180px]">
               {/* Stat 1 */}
               <div className="flex items-start gap-[20px]">
                 <div className="text-right text-[#FFFBFB] text-[40px] font-normal font-['Aleo'] leading-[44px]">
@@ -140,10 +140,10 @@ export default function PurpoSEAgendaCard1() {
 
         @keyframes agendaMarquee {
           0% {
-            transform: translateX(0);
+            transform: translateX(-50%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(0);
           }
         }
       `}</style>

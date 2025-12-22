@@ -8,26 +8,28 @@ export default function TS2StatsSection() {
     if (!scrollContainer) return;
 
     let scrollInterval: ReturnType<typeof setInterval>;
-    const scrollSpeed = 1; // pixels per frame
+    const scrollSpeed = 2; // pixels per frame
     const pauseDuration = 2000; // pause at end in milliseconds
 
     const autoScroll = () => {
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth) {
-        // Pause at the end, then reset to start
+      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      if (scrollContainer.scrollLeft <= 0) {
+        // Pause at the start, then jump to the end
         setTimeout(() => {
-          scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+          scrollContainer.scrollTo({ left: maxScroll, behavior: 'smooth' });
         }, pauseDuration);
       } else {
-        scrollContainer.scrollLeft += scrollSpeed;
+        scrollContainer.scrollLeft -= scrollSpeed;
       }
     };
 
-    scrollInterval = setInterval(autoScroll, 30);
+    scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    scrollInterval = setInterval(autoScroll, 20);
 
     // Pause scrolling on hover
     const handleMouseEnter = () => clearInterval(scrollInterval);
     const handleMouseLeave = () => {
-      scrollInterval = setInterval(autoScroll, 30);
+      scrollInterval = setInterval(autoScroll, 20);
     };
 
     scrollContainer.addEventListener('mouseenter', handleMouseEnter);
@@ -82,7 +84,8 @@ export default function TS2StatsSection() {
                 Up to
               </p>
               <span className="text-[#A374FF] text-[48px] md:text-[52px] lg:text-[55px] font-semibold font-['Manrope'] leading-[60.5px]">
-                $95,000
+                <span>$95,</span>
+                <span className="block xl:inline">000</span>
               </span>
             </div>
             <p className="text-[#22282B] text-[16px] md:text-[18px] font-medium font-['Manrope'] leading-[23.4px]">
@@ -107,7 +110,7 @@ export default function TS2StatsSection() {
 
           {/* Stat 3 */}
           <div className="flex flex-col pt-[23px] gap-8 border-l-2 border-[#FCD290] pl-8">
-            <div className="flex items-baseline gap-2">
+            <div className="flex flex-wrap items-baseline gap-2">
               <span className="text-[#A374FF] text-[48px] md:text-[52px] lg:text-[55px] font-semibold font-['Manrope'] leading-[60.5px]">
                 39
               </span>
@@ -135,16 +138,16 @@ export default function TS2StatsSection() {
       {/* Coverage Section - Continues from stats */}
       <div className="relative px-6 md:px-12 lg:px-0 pb-12 md:pb-16 lg:pb-20 flex justify-end">
         {/* Background Images */}
-        <img 
+        {/* <img 
           className="absolute left-[-47px] top-0 w-[1535px] h-[768px] object-cover opacity-20 hidden xl:block" 
           src="/venture-building/ts2-bg.png" 
           alt="Background"
         />
-        
+         */}
         <div className="relative z-10 w-full lg:max-w-[1400px]">
           {/* Coverage Card */}
           <div 
-            className="w-full p-8 md:p-12 lg:p-16"
+            className="w-full p-6 md:p-8 lg:p-10"
             style={{ 
               opacity: 0.80, 
               background: 'linear-gradient(180deg, #A374FF 21%)', 
@@ -152,9 +155,9 @@ export default function TS2StatsSection() {
               borderBottomLeftRadius: 46 
             }}
           >
-            <div className="flex flex-col lg:flex-row lg:items-center gap-22 lg:gap-22">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-12">
               {/* Left Content */}
-              <div className="w-full lg:w-[600px] flex flex-col gap-6 lg:gap-6">
+              <div className="w-full lg:w-[600px] flex flex-col gap-4 lg:gap-5">
                 <h3 className="text-white text-[36px] md:text-[42px] lg:text-[48px] font-medium font-['Aleo'] capitalize leading-[44px] lg:leading-[52.8px]">
                   Coverage & Features
                 </h3>
@@ -165,7 +168,7 @@ export default function TS2StatsSection() {
               
               {/* Right Images - Auto-Scrollable */}
               <div ref={scrollRef} className="overflow-x-auto scrollbar-hide">
-                <div className="flex gap-4 lg:gap-6 pb-4">
+                <div className="flex gap-4 lg:gap-6 pb-2">
                   <img 
                     className="flex-shrink-0 w-[300px] lg:w-[550px] h-auto lg:h-[569px] rounded-[20px] object-cover" 
                     src="/venture-building/coverage1.png" 

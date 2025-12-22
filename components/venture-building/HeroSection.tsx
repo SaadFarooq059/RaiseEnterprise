@@ -1,22 +1,22 @@
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] bg-[#0E2283] overflow-hidden">
+    <section className="relative w-full min-h-[450px] xs:min-h-[500px] sm:min-h-[550px] md:min-h-[650px] lg:min-h-[750px] xl:min-h-[800px] bg-[#0E2283] overflow-hidden">
       {/* Background Image */}
       <img 
-        className="absolute inset-0 w-full h-full object-cover object-center" 
+        className="absolute inset-0 w-full  h-full object-cover object-center" 
         src="/venture-building/bg.png"
         alt="Background"
       />
       
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center lg:justify-start px-4 sm:px-6 md:px-12 lg:px-[8%] xl:px-[12%] py-8 md:py-0 lg:pt-[216px]">
+      <div className="relative z-10 min-h-[450px] xs:min-h-[500px] sm:min-h-[550px] md:min-h-[650px] lg:min-h-[750px] xl:min-h-[800px] flex flex-col justify-start px-5 xs:px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 2xl:px-[12%] pt-4 xs:pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-16 2xl:pt-[5%] pb-12 sm:pb-16 md:pb-20">
         {/* Heading */}
-        <h1 className="max-w-full sm:max-w-[588px] text-white text-[28px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-medium font-['Aleo'] capitalize leading-[34px] sm:leading-[38px] md:leading-[48px] lg:leading-[58.5px]">
-          Venture Building: <br/>Building Businesses with Impact
+        <h1 className="max-w-full sm:max-w-[520px] md:max-w-[588px] text-white text-[24px] xs:text-[28px] sm:text-[34px] md:text-[42px] lg:text-[48px] font-medium font-['Aleo'] leading-[1.2] sm:leading-[1.25] mb-4 sm:mb-5 md:mb-6 lg:mb-8">
+          Venture Building:<br/>Building Businesses with Impact
         </h1>
         
         {/* Description */}
-        <p className="max-w-full sm:max-w-[500px] mt-2 sm:mt-3 md:mt-4 lg:mt-6 text-white text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] font-semibold font-['Manrope'] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-6">
+        <p className="max-w-full sm:max-w-[460px] md:max-w-[520px] lg:max-w-[580px] text-white text-[14px] xs:text-[15px] sm:text-[17px] md:text-[19px] lg:text-[20px] font-semibold font-['Manrope'] leading-[1.5] sm:leading-[1.45] md:leading-[1.4]">
           We believe that nurturing the next generation of social entrepreneurs is crucial for the future of our ecosystem. Through our funding and accelerator programmes, we provide support to help them realise their vision for social change and build a business with purpose.
         </p>
       </div>

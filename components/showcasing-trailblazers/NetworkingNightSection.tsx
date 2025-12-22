@@ -32,7 +32,7 @@ export default function NetworkingNightSection() {
   return (
     <div ref={sectionRef} className="relative flex justify-end mb-12 md:mb-20 lg:mb-32">
       {/* Content Container - Attached to right */}
-      <div className="relative w-full" style={{ maxWidth: '1340px' }}>
+      <div className="relative w-full" style={{ maxWidth: '1140px' }}>
         {/* Purple Card Background */}
         <div 
           className="absolute inset-0"
@@ -45,7 +45,7 @@ export default function NetworkingNightSection() {
         ></div>
 
         {/* Images Section - Scroll-linked */}
-        <div className="relative pt-8 md:pt-12 lg:pt-[50px] pb-12 md:pb-16 lg:pb-[80px] pl-4 md:pl-6 lg:pl-[25px]">
+        <div className="relative pt-4 md:pt-6 lg:pt-[23px] pb-12 md:pb-16 lg:pb-[85px] pl-4 md:pl-6 lg:pl-[25px]">
           <div className="overflow-x-hidden scrollbar-hide">
             <div
               className="flex w-max gap-3 md:gap-[13px] pb-4 marquee-track"
@@ -54,7 +54,7 @@ export default function NetworkingNightSection() {
               {images.map((image) => (
                 <img 
                   key={image.src}
-                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[570px] h-auto md:h-[300px] lg:h-[380px] rounded-[15px] md:rounded-[20px] object-cover" 
                   src={image.src}
                   alt={image.alt}
                 />
@@ -62,7 +62,7 @@ export default function NetworkingNightSection() {
               {images.map((image) => (
                 <img 
                   key={`${image.src}-duplicate`}
-                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[670px] h-auto md:h-[300px] lg:h-[447px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[570px] h-auto md:h-[300px] lg:h-[380px] rounded-[15px] md:rounded-[20px] object-cover" 
                   src={image.src}
                   alt=""
                   aria-hidden="true"
@@ -74,19 +74,19 @@ export default function NetworkingNightSection() {
 
         {/* Text Content */}
         <div className="relative px-4 md:px-6 lg:px-[25px] pb-12 md:pb-16 lg:pb-[80px]">
-          <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-[90px]">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-[75px]">
             {/* Left - Heading */}
             <div className="flex-shrink-0">
               <div className="text-[#FCD290] text-lg md:text-[20px] font-semibold font-['Manrope'] leading-5 mb-6 md:mb-[37px]">
                 MEMBER EVENT
               </div>
-              <h3 className="text-white text-2xl md:text-3xl lg:text-[36px] font-normal font-['Aleo'] leading-tight md:leading-[46.8px] max-w-full lg:max-w-[356px]">
+              <h3 className="text-white text-2xl md:text-3xl lg:text-[36px] font-normal font-['Aleo'] leading-tight md:leading-[46.8px] max-w-full lg:max-w-[300px]">
                 raiSE Member's Networking Night
               </h3>
             </div>
             
             {/* Right - Paragraph */}
-            <div className="max-w-full lg:max-w-[650px]">
+            <div className="max-w-full lg:max-w-[550px]">
               <p className="text-white text-base md:text-[18px] font-medium font-['Manrope'] leading-relaxed md:leading-[23.4px]">
                 On 10 December 2024, the raiSE Members' Networking Night brought together 22 raiSE Impact Community members and 51 Social Enterprise members for a light-hearted yet purposeful year-end celebration. <br/><br/>
                 Beyond marking the close of the year, the event served as a valuable platform for aspiring Social Entrepreneurs from the raiSE Impact Community to connect with established Social Enterprises that are already creating meaningful impact. <br/><br/>
@@ -104,10 +104,10 @@ export default function NetworkingNightSection() {
 
         @keyframes marquee {
           0% {
-            transform: translateX(0);
+            transform: translateX(-50%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(0);
           }
         }
       `}</style>

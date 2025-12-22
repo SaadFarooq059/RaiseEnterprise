@@ -69,10 +69,10 @@ export default function TS2TestimonialSection() {
           </svg>
         </button>
 
-        <div className={`w-full lg:w-[1080px] flex flex-col gap-12 md:gap-16 lg:gap-20 transition-all duration-300 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+        <div className={`w-full lg:flex-1 lg:max-w-[980px] xl:max-w-[1080px] min-w-0 flex flex-col gap-12 md:gap-16 lg:gap-20 transition-all duration-300 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
           {/* Quote */}
           <div className="w-full">
-            <p className="text-[#2A167F] text-[16px] md:text-[20px] lg:text-[28px] font-normal font-['Aleo'] italic leading-[24px] md:leading-[32px] lg:leading-[40px]">
+            <p className="min-h-[192px] sm:min-h-[176px] md:min-h-[168px] lg:min-h-[168px] text-[#2A167F] text-[16px] md:text-[20px] lg:text-[28px] font-normal font-['Aleo'] italic leading-[24px] md:leading-[32px] lg:leading-[40px]">
               {currentTestimonial.quote}
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function TS2TestimonialSection() {
 
             <div className="w-full lg:w-[446px] flex items-stretch gap-4 md:gap-5 lg:gap-6">
               <div className="w-px bg-[#FCD290] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex-shrink-0"></div>
-              <p className="flex-1 text-white text-[18px] md:text-[20px] lg:text-[24px] font-medium font-['Manrope'] leading-[24px] lg:leading-[31.2px]">
+              <p className="flex-1 min-h-[128px] sm:min-h-[120px] md:min-h-[112px] lg:min-h-[112px] text-white text-[18px] md:text-[20px] lg:text-[24px] font-medium font-['Manrope'] leading-[24px] lg:leading-[31.2px]">
                 {currentTestimonial.orgDescription}
               </p>
             </div>

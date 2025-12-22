@@ -28,7 +28,7 @@ export default function IWD2025Card() {
   return (
     <div ref={sectionRef} className="relative flex justify-end mb-8 lg:mb-[47px]">
       {/* Content Container - Attached to right */}
-      <div className="relative w-full" style={{ maxWidth: '1340px' }}>
+      <div className="relative w-full" style={{ maxWidth: '1140px' }}>
         {/* Purple Card Background */}
         <div 
           className="absolute inset-0"
@@ -50,7 +50,7 @@ export default function IWD2025Card() {
               {images.map((image) => (
                 <img 
                   key={image.src}
-                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[570px] h-auto md:h-[300px] lg:h-[380px] rounded-[15px] md:rounded-[20px] object-cover" 
                   src={image.src}
                   alt={image.alt}
                 />
@@ -58,7 +58,7 @@ export default function IWD2025Card() {
               {images.map((image) => (
                 <img 
                   key={`${image.src}-duplicate`}
-                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[570px] h-auto md:h-[300px] lg:h-[380px] rounded-[15px] md:rounded-[20px] object-cover" 
                   src={image.src}
                   alt=""
                   aria-hidden="true"
@@ -79,42 +79,42 @@ export default function IWD2025Card() {
 
 
           {/* Two Column Layout */}
-          <div className="flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-[106px]">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-[90px]">
             {/* Left - Description */}
-            <div className="max-w-full lg:max-w-[407px]">
-              <p className="text-white text-lg md:text-xl lg:text-[22px] font-medium font-['Manrope'] leading-relaxed md:leading-[28.6px]">
+            <div className="max-w-full lg:max-w-[350px]">
+              <p className="text-white text-[22px] font-medium font-['Manrope'] leading-[28.6px]">
                 On 28 March 2025, raiSE and ACE.SG co-organised the International Women's Day <span className="font-normal">Accelerate Action</span> Conference, drawing 275 attendees to celebrate the impact of Women Social Entrepreneurs.
               </p>
             </div>
 
             {/* Right - Stats */}
-            <div className="flex flex-col gap-[26px] ml-[210px]">
+            <div className="flex flex-col gap-[26px] ml-[180px]">
               {/* Stat 1 */}
               <div className="flex items-start gap-4 md:gap-5 lg:gap-[20px]">
-                <div className="text-right text-[#FFFBFB] text-2xl md:text-3xl lg:text-[32px] font-normal font-['Aleo'] leading-tight md:leading-[35.2px]">
+                <div className="text-right text-[#FFFBFB] text-[40px] font-normal font-['Aleo'] leading-[44px]">
                   275
                 </div>
-                <div className="max-w-full md:max-w-[142px] text-[#FFFBFB] text-sm md:text-[14px] font-medium font-['Manrope'] leading-tight md:leading-[18.2px]">
+                <div className="max-w-full md:max-w-[142px] text-[#FFFBFB] text-[14px] font-medium font-['Manrope'] leading-[18.2px]">
                   Attendees Celebrated women social entrepreneurs
                 </div>
               </div>
 
               {/* Stat 2 */}
               <div className="flex items-start gap-4 md:gap-5 lg:gap-[20px]">
-                <div className="text-right text-[#FFFBFB] text-2xl md:text-3xl lg:text-[32px] font-normal font-['Aleo'] leading-tight md:leading-[35.2px]">
+                <div className="text-right text-[#FFFBFB] text-[40px] font-normal font-['Aleo'] leading-[44px]">
                   125
                 </div>
-                <div className="max-w-full md:max-w-[163px] text-[#FFFBFB] text-sm md:text-[14px] font-medium font-['Manrope'] leading-tight md:leading-[18.2px]">
+                <div className="max-w-full md:max-w-[163px] text-[#FFFBFB] text-[14px] font-medium font-['Manrope'] leading-[18.2px]">
                   Joined breakout on Collaboration over Competition
                 </div>
               </div>
 
               {/* Stat 3 */}
               <div className="flex items-start gap-4 md:gap-5 lg:gap-[20px ml-8">
-                <div className="text-right text-[#FFFBFB] text-2xl md:text-3xl lg:text-[32px] font-normal font-['Aleo'] leading-tight md:leading-[35.2px]">
+                <div className="text-right text-[#FFFBFB] text-[40px] font-normal font-['Aleo'] leading-[44px]">
                   4
                 </div>
-                <div className="max-w-full md:max-w-[142px] text-[#FFFBFB] text-sm md:text-[14px] font-medium font-['Manrope'] capitalize leading-tight md:leading-[18.2px]">
+                <div className="max-w-full md:max-w-[142px] text-[#FFFBFB] text-[14px] font-medium font-['Manrope'] capitalize leading-[18.2px]">
                   SE Female Founders shared impact stories
                 </div>
               </div>
@@ -130,10 +130,10 @@ export default function IWD2025Card() {
 
         @keyframes iwdMarquee {
           0% {
-            transform: translateX(0);
+            transform: translateX(-50%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(0);
           }
         }
       `}</style>

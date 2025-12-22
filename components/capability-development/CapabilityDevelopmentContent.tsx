@@ -71,18 +71,18 @@ export default function CapabilityDevelopmentContent() {
         />
         
         {/* Hero Content */}
-        <div className="relative z-10 pt-52 pb-[500px] w-full flex justify-center">
+        <div className="relative z-10 pt-80 pb-[300px] w-full flex justify-center">
           <div className="w-full max-w-[1200px] px-6">
             {/* Main Heading */}
             <div 
               className="w-full md:w-[625px]"
               style={{
-                color: 'white',
-                fontSize: 45,
-                fontFamily: 'Aleo',
-                fontWeight: '500',
-                lineHeight: '58.50px',
-                wordWrap: 'break-word'
+          color: 'white',
+          fontSize: 45,
+          fontFamily: 'Aleo',
+          fontWeight: '500',
+          lineHeight: '58.50px',
+          wordWrap: 'break-word'
               }}
             >
               Capability Development: Upskilling People and Enterprise
@@ -92,12 +92,12 @@ export default function CapabilityDevelopmentContent() {
             <div 
               className="mt-8 w-full md:w-[597px]"
               style={{
-                color: 'white',
-                fontSize: 20,
-                fontFamily: 'Manrope',
-                fontWeight: '500',
-                lineHeight: '26px',
-                wordWrap: 'break-word'
+          color: 'white',
+          fontSize: 20,
+          fontFamily: 'Manrope',
+          fontWeight: '500',
+          lineHeight: '26px',
+          wordWrap: 'break-word'
               }}
             >
               At raiSE, we are dedicated to nurturing the next generation of changemakers and empowering our existing Social Enterprise members. We educate and equip aspiring individuals with the foundational skills needed to build their own impactful businesses, while offering our members a range of resources and programmes to help them scale their businesses and deepen their impact. This holistic approach ensures a robust and sustainable ecosystem for social change.
@@ -164,7 +164,7 @@ export default function CapabilityDevelopmentContent() {
         </div>
         
         {/* IHLs Image */}
-        <div className="w-full mt-8">
+        <div className="w-full mt-0">
           <img 
             src="/development/hero2.svg" 
             alt="Partnering with IHLs" 
@@ -173,7 +173,7 @@ export default function CapabilityDevelopmentContent() {
         </div>
 
         {/* Grow Impact Workshop Section */}
-        <div className="w-full py-20 flex justify-center">
+        <div className="w-full pt-0 pb-20 flex justify-center">
           <div className="w-full max-w-[1200px] px-6">
             <div className="flex flex-col md:flex-row gap-12">
               {/* Left - Title */}

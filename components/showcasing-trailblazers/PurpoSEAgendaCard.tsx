@@ -35,7 +35,7 @@ export default function PurpoSEAgendaCard() {
   return (
     <div ref={sectionRef} className="relative flex justify-end mb-8 lg:mb-[47px]">
       {/* Content Container - Attached to right */}
-      <div className="relative w-full" style={{ maxWidth: '1340px' }}>
+      <div className="relative w-full" style={{ maxWidth: '1140px' }}>
         {/* Purple Card Background */}
         <div 
           className="absolute inset-0"
@@ -57,7 +57,7 @@ export default function PurpoSEAgendaCard() {
               {images.map((image) => (
                 <img 
                   key={image.src}
-                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[570px] h-auto md:h-[300px] lg:h-[380px] rounded-[15px] md:rounded-[20px] object-cover" 
                   src={image.src}
                   alt={image.alt}
                 />
@@ -65,7 +65,7 @@ export default function PurpoSEAgendaCard() {
               {images.map((image) => (
                 <img 
                   key={`${image.src}-duplicate`}
-                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[675px] h-auto md:h-[300px] lg:h-[450px] rounded-[15px] md:rounded-[20px] object-cover" 
+                  className="flex-shrink-0 w-[280px] md:w-[450px] lg:w-[570px] h-auto md:h-[300px] lg:h-[380px] rounded-[15px] md:rounded-[20px] object-cover" 
                   src={image.src}
                   alt=""
                   aria-hidden="true"
@@ -76,7 +76,7 @@ export default function PurpoSEAgendaCard() {
         </div>
 
         {/* Event Snapshot Badge and Stats */}
-        <div className="relative px-4 md:px-6 lg:px-[25px] pb-6 md:pb-8 lg:pb-[40px]">
+        <div className="relative px-4 md:px-6 lg:px-[25px] pb-12 md:pb-16 lg:pb-[80px]">
           {/* Badge */}
           <div className="w-[180px] md:w-[204px] h-[40px] md:h-[47px] bg-[#FCD290] rounded-[40px] flex items-center justify-center mb-4 md:mb-6 lg:mb-[24px]">
             <span className="text-[#2A167F] text-sm md:text-[15px] font-semibold font-['Aleo'] leading-[15px]">
@@ -85,9 +85,9 @@ export default function PurpoSEAgendaCard() {
           </div>
 
           {/* Two Column Layout */}
-          <div className="flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-[106px]">
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-12 lg:gap-[90px]">
             {/* Left - Description */}
-            <div className="max-w-full lg:max-w-[446px]">
+            <div className="max-w-full lg:max-w-[380px]">
               <p className="text-white text-lg md:text-xl lg:text-[22px] font-medium font-['Manrope'] leading-relaxed md:leading-[28.6px]">
            The PurpoSE Agenda provided a 
       high-profile platform for Social Enterprises to connect with investors, stakeholders, and partners, while spotlighting panelists, entrepreneurs, leaders, and students across our channels.
@@ -95,7 +95,7 @@ export default function PurpoSEAgendaCard() {
             </div>
 
             {/* Right - Stats */}
-            <div className="flex flex-col gap-6 md:gap-8 lg:gap-[26px] ml-0 lg:ml-[210px]">
+            <div className="flex flex-col gap-6 md:gap-8 lg:gap-[26px] ml-0 lg:ml-[180px]">
               {/* Stat 1 */}
               <div className="flex items-start gap-4 md:gap-5 lg:gap-[20px]">
                 <div className="text-right text-[#FFFBFB] text-2xl md:text-3xl lg:text-[40px] font-normal font-['Aleo'] leading-tight md:leading-[44px]">
@@ -137,10 +137,10 @@ export default function PurpoSEAgendaCard() {
 
         @keyframes purposeMarquee {
           0% {
-            transform: translateX(0);
+            transform: translateX(-50%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(0);
           }
         }
       `}</style>

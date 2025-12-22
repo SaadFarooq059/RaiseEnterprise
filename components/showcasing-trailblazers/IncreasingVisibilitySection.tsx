@@ -138,7 +138,7 @@ export default function IncreasingVisibilitySection() {
           </p>
 
           {/* Layered Images Section */}
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 lg:gap-10 -mt-16 -mb-16 ml-10">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-6 lg:gap-10 -mt-12 -mb-13 ml-10">
   
   {/* Image */}
   <img 

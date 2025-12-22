@@ -74,7 +74,7 @@ export default function EnergiSETestimonialSection() {
           {/* Author Info */}
           <div className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8 lg:gap-0">
             <div className="w-full lg:w-[446px] flex flex-col gap-3 sm:gap-4">
-              <h3 className="text-[#FCD290] text-[24px] sm:text-[28px] md:text-[30px] lg:text-[34px] font-semibold font-['Aleo'] capitalize leading-[30px] sm:leading-[36px] lg:leading-[44.2px]">
+              <h3 className="text-[#FCD290] text-[20px] sm:text-[24px] md:text-[26px] lg:text-[30px] font-semibold font-['Aleo'] capitalize leading-[30px] sm:leading-[36px] lg:leading-[44.2px]">
                 {currentTestimonial.name}
               </h3>
               <p className="text-white text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-medium font-['Manrope'] leading-[22px] sm:leading-[24px] lg:leading-[31.2px]">
@@ -84,7 +84,7 @@ export default function EnergiSETestimonialSection() {
 
             <div className="w-full lg:w-[446px] flex items-stretch gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               <div className="w-px bg-[#FCD290] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex-shrink-0"></div>
-              <p className="flex-1 text-white text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-medium font-['Manrope'] leading-[22px] sm:leading-[24px] lg:leading-[31.2px]">
+              <p className="flex-1 text-white text-[14px] sm:text-[16px] md:text-[16px] lg:text-[22px] font-medium font-['Manrope'] leading-[22px] sm:leading-[24px] lg:leading-[31.2px]">
                 {currentTestimonial.description}
               </p>
             </div>
