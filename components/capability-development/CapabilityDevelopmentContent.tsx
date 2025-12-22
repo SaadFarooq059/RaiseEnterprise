@@ -367,9 +367,9 @@ export default function CapabilityDevelopmentContent() {
         </div>
 
         {/* Aligning Objectives Section */}
-        <div className="w-full py-16 flex justify-center">
+        <div className="w-full py-6 md:py-8 flex justify-center">
           <div className="w-full max-w-[1200px] px-6">
-            <div className="flex flex-col md:flex-row gap-12">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
               {/* Left - Title */}
               <div className="md:w-[400px]">
                 <div 
@@ -405,9 +405,9 @@ export default function CapabilityDevelopmentContent() {
         </div>
 
         {/* Key Insights Section */}
-        <div className="w-full py-16 flex justify-center">
+        <div className="w-full py-6 md:py-8 flex justify-center">
           <div className="w-full max-w-[1200px] px-6">
-            <div className="flex flex-col md:flex-row gap-12">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
               {/* Left - Title */}
               <div className="md:w-[400px]">
                 <div 
@@ -443,9 +443,9 @@ export default function CapabilityDevelopmentContent() {
         </div>
 
         {/* Tailored Guidance Section */}
-        <div className="w-full py-16 flex justify-center">
+        <div className="w-full py-6 md:py-8 flex justify-center">
           <div className="w-full max-w-[1200px] px-6">
-            <div className="flex flex-col md:flex-row gap-12">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6">
               {/* Left - Title */}
               <div className="md:w-[400px]">
                 <div 
